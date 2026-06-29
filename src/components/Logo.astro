@@ -1,5 +1,6 @@
 ---
 import { BRAND } from "../config/brand";
+import { withBase } from "../utils/paths";
 
 interface Props {
   variant?: "light" | "dark";
@@ -11,6 +12,6 @@ const { variant = "dark", size = "default" } = Astro.props;
 
 <a class:list={["logo", `logo-${variant}`, `logo-${size}`]} href="#top" aria-label={`${BRAND.name} home`}>
   <span class="logo-raster" aria-hidden="true">
-    <img src={BRAND.logo} alt="" loading="eager" decoding="async" />
+    <img src={withBase(BRAND.logo)} alt="" loading="eager" decoding="async" />
   </span>
 </a>

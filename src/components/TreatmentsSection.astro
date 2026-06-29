@@ -17,10 +17,13 @@ import ServiceCard from "./ServiceCard.astro";
     </div>
     <div class="service-grid">
       {siteContent.en.treatments.items.map((item, index) => (
-        <ServiceCard title={item.title} text={item.text} index={index} lang="en" />
-      ))}
-      {siteContent.it.treatments.items.map((item, index) => (
-        <ServiceCard title={item.title} text={item.text} index={index} lang="it" />
+        <ServiceCard
+          titleEn={item.title}
+          titleIt={siteContent.it.treatments.items[index].title}
+          textEn={item.text}
+          textIt={siteContent.it.treatments.items[index].text}
+          index={index}
+        />
       ))}
     </div>
   </div>

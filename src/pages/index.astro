@@ -17,7 +17,7 @@ const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
 ---
 
 <!doctype html>
-<html lang="en" data-lang="en" style={`--brandPrimary: ${BRAND.primary}; --brandBlack: ${BRAND.black}; --brandWhite: ${BRAND.white};`}>
+<html lang="en" data-lang="en" style={`--brandBlack: ${BRAND.colors.black}; --brandWhite: ${BRAND.colors.white}; --brandRed: ${BRAND.colors.red}; --brandSoft: ${BRAND.colors.soft}; --brandMuted: ${BRAND.colors.muted};`}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +25,7 @@ const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
     <meta name="description" content={pageDescription} />
     <meta name="keywords" content={seo.keywords} />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content={BRAND.black} />
+    <meta name="theme-color" content={BRAND.colors.black} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={BRAND.name} />
     <meta property="og:title" content={siteContent.en.seo.ogTitle} />
@@ -38,13 +38,9 @@ const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
     <link rel="alternate" hreflang="en" href={Astro.url.href} />
     <link rel="alternate" hreflang="it" href={Astro.url.href} />
     <link rel="alternate" hreflang="x-default" href={Astro.url.href} />
-    <link rel="icon" href={withBase(BRAND.favicon)} type="image/svg+xml" />
-    <link rel="icon" href={withBase("/favicon.ico")} sizes="any" />
-    <link rel="icon" href={withBase("/favicon-16x16.png")} sizes="16x16" type="image/png" />
-    <link rel="icon" href={withBase("/favicon-32x32.png")} sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} sizes="180x180" />
+    <link rel="icon" href={withBase(BRAND.favicon)} type="image/png" />
+    <link rel="apple-touch-icon" href={withBase(BRAND.favicon)} />
     <link rel="manifest" href={withBase("/site.webmanifest")} />
-    <link rel="mask-icon" href={withBase(BRAND.favicon)} color={BRAND.primary} />
     <link rel="preload" as="image" href={withBase(BRAND.heroImage)} />
   </head>
   <body>
@@ -83,10 +79,6 @@ const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
               <span data-lang-content="en">{siteContent.en.contact.whatsappCta}</span>
               <span data-lang-content="it">{siteContent.it.contact.whatsappCta}</span>
             </a>
-            <p class="contact-note">
-              <span data-lang-content="en">{siteContent.en.contact.note}</span>
-              <span data-lang-content="it">{siteContent.it.contact.note}</span>
-            </p>
           </div>
         </div>
       </section>

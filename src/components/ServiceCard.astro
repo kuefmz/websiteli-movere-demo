@@ -1,16 +1,23 @@
 ---
 interface Props {
-  title: string;
-  text: string;
+  titleEn: string;
+  titleIt: string;
+  textEn: string;
+  textIt: string;
   index: number;
-  lang: "en" | "it";
 }
 
-const { title, text, index, lang } = Astro.props;
+const { titleEn, titleIt, textEn, textIt, index } = Astro.props;
 ---
 
-<article class="service-card reveal-card" data-lang-content={lang} style={`--card-index: ${index}`}>
+<article class="service-card reveal-card" style={`--card-index: ${index}`}>
   <div class="service-number">{String(index + 1).padStart(2, "0")}</div>
-  <h3>{title}</h3>
-  <p>{text}</p>
+  <h3>
+    <span data-lang-content="en">{titleEn}</span>
+    <span data-lang-content="it">{titleIt}</span>
+  </h3>
+  <p>
+    <span data-lang-content="en">{textEn}</span>
+    <span data-lang-content="it">{textIt}</span>
+  </p>
 </article>

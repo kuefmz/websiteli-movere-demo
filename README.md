@@ -42,6 +42,21 @@ npm run preview
 
 The repository includes `.github/workflows/deploy.yml`. Every push to `main` installs dependencies, builds the Astro site, uploads `dist/`, and deploys it to GitHub Pages.
 
+Production URL:
+
+```text
+https://kuefmz.github.io/websiteli-movere-demo/
+```
+
+`astro.config.mjs` must keep:
+
+```js
+site: "https://kuefmz.github.io",
+base: "/websiteli-movere-demo"
+```
+
+All public assets must be referenced through `withBase(...)` or `import.meta.env.BASE_URL` so images, CSS, JS, favicon files, and the manifest resolve below the GitHub Pages base path.
+
 In GitHub repository settings:
 
 - Open **Settings → Pages**
@@ -54,7 +69,7 @@ For Netlify or Hostpoint, run `npm run build` and deploy the `dist/` folder.
 
 - If the GitHub Actions build fails, check the **Actions** tab and inspect the failing step.
 - If dependencies fail to install, confirm `package-lock.json` is committed.
-- If assets do not load on GitHub Pages, confirm `astro.config.mjs` has the correct `base` for the repository.
+- If assets do not load on GitHub Pages, confirm `astro.config.mjs` has the exact `site` and `base` values above.
 - If appointment links open the wrong chat, update `BRAND.contact.whatsappNumber`.
 
 ## Edit Text
@@ -75,7 +90,15 @@ Brand values live in:
 src/config/brand.ts
 ```
 
-The main CSS uses those values as variables in:
+Approved palette:
+
+- black: `#111111`
+- white: `#FFFFFF`
+- red: `#C1121F`
+- soft background: `#F7F5F2`
+- muted text: `#6F6A66`
+
+The main CSS receives those values as variables in:
 
 ```text
 src/styles/global.css
@@ -83,7 +106,7 @@ src/styles/global.css
 
 ## Edit Logo
 
-The website uses the provided logo image directly. The logo component is:
+The website uses the approved Movere logo image. The header shows the icon and `MOVERE` only. The logo component is:
 
 ```text
 src/components/Logo.astro
@@ -95,24 +118,23 @@ The logo image asset is:
 public/assets/movere-logo-reference.png
 ```
 
-Do not redraw or replace this logo unless the client provides a new approved logo file.
+Do not redraw or replace this logo unless the client provides a new approved logo file. Route logo references through `withBase(...)` for GitHub Pages.
 
-## Favicon Assets
+## Browser Tab Icon
 
-```bash
-The favicon files are stored in `public/`. Only regenerate or replace them when a new approved logo/icon file is provided.
+The browser tab icon uses:
+
+```text
+public/assets/logo.png
 ```
 
-This creates:
+The head links in `src/pages/index.astro` must point to this file through `withBase(...)`.
 
-- `public/favicon.ico`
-- `public/favicon.svg`
-- `public/favicon-16x16.png`
-- `public/favicon-32x32.png`
-- `public/apple-touch-icon.png`
-- `public/android-chrome-192x192.png`
-- `public/android-chrome-512x512.png`
-- `public/site.webmanifest`
+## Language Switching
+
+Default language is English. All editable copy lives in `src/content/siteContent.ts`.
+
+Components should render one structural section/card/step and swap the text with `data-lang-content="en"` and `data-lang-content="it"`. The language switcher updates `html[data-lang]`, `html[lang]`, local storage, and SEO metadata. Do not create separate visible sections for each language.
 
 ## Appointment Link
 
@@ -120,3 +142,7 @@ Appointment requests currently use WhatsApp instead of an embedded form.
 
 Set the production number in `BRAND.contact.whatsappNumber` in `src/config/brand.ts`.
 Use the WhatsApp international format without `+`, spaces, or punctuation.
+
+## Public Copy Rule
+
+Public-facing copy must read as launch-ready clinic content. Avoid interim status language in website text, contact notes, section headings, metadata, and image alt text.

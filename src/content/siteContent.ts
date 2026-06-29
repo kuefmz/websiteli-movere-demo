@@ -100,9 +100,8 @@ export const siteContent = {
       title: "Tell us what you need help with.",
       intro:
         "Request an appointment and we will contact you to discuss availability, your area of concern, and the most appropriate next step.",
-      whatsappIntro: "Send us a message on WhatsApp with your name and what you need help with.",
-      whatsappCta: "Request an appointment on WhatsApp",
-      note: "Sample WhatsApp number in use for now."
+      whatsappIntro: "Send a message and we will get back to you to discuss availability.",
+      whatsappCta: "Request an appointment on WhatsApp"
     },
     footer: {
       builtBy: "Built by",
@@ -206,9 +205,8 @@ export const siteContent = {
       title: "Raccontaci di cosa hai bisogno.",
       intro:
         "Richiedi un appuntamento: ti contatteremo per valutare la disponibilità, l'area di interesse e il passo più adatto.",
-      whatsappIntro: "Scrivici su WhatsApp indicando il tuo nome e di cosa hai bisogno.",
-      whatsappCta: "Richiedi un appuntamento su WhatsApp",
-      note: "Per ora è in uso un numero WhatsApp di esempio."
+      whatsappIntro: "Invia un messaggio e ti ricontatteremo per valutare la disponibilità.",
+      whatsappCta: "Richiedi un appuntamento su WhatsApp"
     },
     footer: {
       builtBy: "Realizzato da",

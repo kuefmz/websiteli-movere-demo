@@ -7,14 +7,15 @@ Movere is a physiotherapy and movement care practice in Florence / Firenze, Ital
 ## Brand Identity
 
 - Name: Movere
-- Visual identity: black, white, and red
+- Visual identity: black, white, red, soft background, and muted text
+- Approved palette: `#111111`, `#FFFFFF`, `#C1121F`, `#F7F5F2`, `#6F6A66`
 - Tone: premium, calm, confident, medical, human, and trustworthy
 - Location feel: Florentine and refined, never touristy
 - Logo: primary brand identity supplied as `public/assets/movere-logo-reference.png`, consisting only of the icon and the word MOVERE
 - The V in MOVERE is red; the other letters are black or white depending on context
 - The icon uses thin, elegant strokes inspired by human proportion, movement, and body mechanics
 
-Do not redesign, redraw, trace, generate, or replace the logo unless explicitly requested. Preserve the supplied logo image, spacing, proportions, typography, and colors. The site should use the provided raster logo asset directly.
+Do not redesign, redraw, trace, generate, or replace the logo unless explicitly requested. Preserve the supplied logo image, spacing, proportions, typography, and colors. The header logo must show only the icon and MOVERE wordmark.
 
 ## Tech Stack
 
@@ -24,6 +25,23 @@ Do not redesign, redraw, trace, generate, or replace the logo unless explicitly 
 - Static output
 - Clean global CSS
 - GitHub Actions deployment to GitHub Pages
+
+## GitHub Pages Deployment
+
+Production URL:
+
+```text
+https://kuefmz.github.io/websiteli-movere-demo/
+```
+
+`astro.config.mjs` must keep:
+
+```js
+site: "https://kuefmz.github.io",
+base: "/websiteli-movere-demo"
+```
+
+Use `withBase(...)` or `import.meta.env.BASE_URL` for public assets, including logo, hero images, favicon files, manifest, and preloads.
 
 ## Content Structure
 
@@ -39,6 +57,8 @@ Brand settings are in:
 src/config/brand.ts
 ```
 
+Colors are defined once in `BRAND.colors` and passed to CSS variables from `src/pages/index.astro`.
+
 Do not hardcode editable copy inside components unless it is purely decorative or structural.
 
 ## Language Structure
@@ -47,6 +67,7 @@ Do not hardcode editable copy inside components unless it is purely decorative o
 - The page renders both language versions and hides/shows content based on `html[data-lang]`
 - `LanguageSwitcher.tsx` updates local state, `localStorage`, HTML language attributes, and SEO metadata
 - Keep Italian natural, polished, and clinically appropriate
+- Keep one structural section/card/step and swap text with `data-lang-content`; do not duplicate whole visible sections for each language
 
 ## Components
 
@@ -67,6 +88,13 @@ Do not hardcode editable copy inside components unless it is purely decorative o
 
 Appointment requests currently link to WhatsApp. Set the production number in `BRAND.contact.whatsappNumber` in `src/config/brand.ts` using international format without `+`, spaces, or punctuation.
 
+## Logo And Browser Tab Assets
+
+- Logo: `public/assets/movere-logo-reference.png`
+- Browser tab icon: `public/assets/logo.png`
+
+Head links for these assets live in `src/pages/index.astro` and must use base-safe URLs.
+
 ## What Not To Add
 
 - No prices
@@ -78,6 +106,7 @@ Appointment requests currently link to WhatsApp. Set the production number in `B
 - No interim positioning language
 - No language that says the clinic is unfinished
 - No generic filler text
+- Public copy must read as launch-ready clinic content
 
 ## Future AI Edit Rules
 
