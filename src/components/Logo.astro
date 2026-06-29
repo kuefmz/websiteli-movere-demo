@@ -1,0 +1,16 @@
+---
+import { BRAND } from "../config/brand";
+
+interface Props {
+  variant?: "light" | "dark";
+  size?: "small" | "default" | "large";
+}
+
+const { variant = "dark", size = "default" } = Astro.props;
+---
+
+<a class:list={["logo", `logo-${variant}`, `logo-${size}`]} href="#top" aria-label={`${BRAND.name} home`}>
+  <span class="logo-raster" aria-hidden="true">
+    <img src={BRAND.logo} alt="" loading="eager" decoding="async" />
+  </span>
+</a>

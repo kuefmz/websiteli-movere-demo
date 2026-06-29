@@ -1,0 +1,40 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="section about-section" id="about" aria-labelledby="about-title">
+  <div class="section-wrap split-layout">
+    <div>
+      <p class="eyebrow accent-line">
+        <span data-lang-content="en">{siteContent.en.about.eyebrow}</span>
+        <span data-lang-content="it">{siteContent.it.about.eyebrow}</span>
+      </p>
+      <h2 id="about-title">
+        <span data-lang-content="en">{siteContent.en.about.title}</span>
+        <span data-lang-content="it">{siteContent.it.about.title}</span>
+      </h2>
+    </div>
+    <div class="rich-copy">
+      {siteContent.en.about.body.map((paragraph) => (
+        <p data-lang-content="en">{paragraph}</p>
+      ))}
+      {siteContent.it.about.body.map((paragraph) => (
+        <p data-lang-content="it">{paragraph}</p>
+      ))}
+      <div class="stat-grid">
+        {siteContent.en.about.stats.map(([value, label]) => (
+          <div class="stat" data-lang-content="en">
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
+        {siteContent.it.about.stats.map(([value, label]) => (
+          <div class="stat" data-lang-content="it">
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

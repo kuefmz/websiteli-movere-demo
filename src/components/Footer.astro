@@ -1,0 +1,28 @@
+---
+import { BRAND } from "../config/brand";
+import { siteContent } from "../content/siteContent";
+import Logo from "./Logo.astro";
+---
+
+<footer class="site-footer">
+  <div class="section-wrap footer-grid">
+    <div>
+      <Logo variant="light" size="small" />
+      <p>
+        <span data-lang-content="en">{BRAND.location.en}</span>
+        <span data-lang-content="it">{BRAND.location.it}</span>
+      </p>
+    </div>
+    <div class="footer-meta">
+      <p>
+        <span data-lang-content="en">{siteContent.en.footer.builtBy}</span>
+        <span data-lang-content="it">{siteContent.it.footer.builtBy}</span>
+        <a href={BRAND.websiteliUrl} target="_blank" rel="noopener noreferrer">Websiteli.ch</a>
+      </p>
+      <p>
+        <span data-lang-content="en">English / Italian</span>
+        <span data-lang-content="it">Inglese / Italiano</span>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+---
+import { BRAND } from "../config/brand";
+import { siteContent } from "../content/siteContent";
+
+const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
+---
+
+<section class="inquiry-band" aria-labelledby="inquiry-title">
+  <div class="section-wrap inquiry-grid">
+    <div>
+      <p class="eyebrow">
+        <span data-lang-content="en">{siteContent.en.hero.eyebrow}</span>
+        <span data-lang-content="it">{siteContent.it.hero.eyebrow}</span>
+      </p>
+      <h2 id="inquiry-title">
+        <span data-lang-content="en">A refined setting for focused, individual care.</span>
+        <span data-lang-content="it">Un ambiente curato per una presa in carico individuale.</span>
+      </h2>
+    </div>
+    <div>
+      <p>
+        <span data-lang-content="en">Tell us what you need help with. We will contact you to discuss availability and the most appropriate next step.</span>
+        <span data-lang-content="it">Raccontaci di cosa hai bisogno. Ti contatteremo per valutare la disponibilità e il passo più adatto.</span>
+      </p>
+      <a class="button button-inverted" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+        <span data-lang-content="en">{BRAND.cta.en}</span>
+        <span data-lang-content="it">{BRAND.cta.it}</span>
+      </a>
+    </div>
+  </div>
+</section>

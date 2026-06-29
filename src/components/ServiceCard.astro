@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  index: number;
+  lang: "en" | "it";
+}
+
+const { title, text, index, lang } = Astro.props;
+---
+
+<article class="service-card reveal-card" data-lang-content={lang} style={`--card-index: ${index}`}>
+  <div class="service-number">{String(index + 1).padStart(2, "0")}</div>
+  <h3>{title}</h3>
+  <p>{text}</p>
+</article>

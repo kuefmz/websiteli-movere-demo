@@ -1,0 +1,27 @@
+---
+import { siteContent } from "../content/siteContent";
+import ServiceCard from "./ServiceCard.astro";
+---
+
+<section class="section dark-section" id="treatments" aria-labelledby="treatments-title">
+  <div class="section-wrap">
+    <div class="section-heading">
+      <p class="eyebrow accent-line">
+        <span data-lang-content="en">{siteContent.en.treatments.eyebrow}</span>
+        <span data-lang-content="it">{siteContent.it.treatments.eyebrow}</span>
+      </p>
+      <h2 id="treatments-title">
+        <span data-lang-content="en">{siteContent.en.treatments.title}</span>
+        <span data-lang-content="it">{siteContent.it.treatments.title}</span>
+      </h2>
+    </div>
+    <div class="service-grid">
+      {siteContent.en.treatments.items.map((item, index) => (
+        <ServiceCard title={item.title} text={item.text} index={index} lang="en" />
+      ))}
+      {siteContent.it.treatments.items.map((item, index) => (
+        <ServiceCard title={item.title} text={item.text} index={index} lang="it" />
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+---
+import { BRAND } from "../config/brand";
+import { siteContent } from "../content/siteContent";
+import { withBase } from "../utils/paths";
+
+const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
+---
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <img
+    class="hero-image"
+    src={withBase(BRAND.heroImage)}
+    alt="A refined physiotherapy setting with a clinician guiding a shoulder movement assessment"
+  />
+  <div class="body-lines" aria-hidden="true">
+    <span></span>
+    <span></span>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="section-wrap hero-content">
+    <p class="eyebrow accent-line">
+      <span data-lang-content="en">{siteContent.en.hero.eyebrow}</span>
+      <span data-lang-content="it">{siteContent.it.hero.eyebrow}</span>
+    </p>
+    <h1 id="hero-title">
+      <span data-lang-content="en">{siteContent.en.hero.title}</span>
+      <span data-lang-content="it">{siteContent.it.hero.title}</span>
+    </h1>
+    <p class="hero-subtitle">
+      <span data-lang-content="en">{siteContent.en.hero.subtitle}</span>
+      <span data-lang-content="it">{siteContent.it.hero.subtitle}</span>
+    </p>
+    <div class="hero-actions">
+      <a class="button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+        <span data-lang-content="en">{siteContent.en.hero.primary}</span>
+        <span data-lang-content="it">{siteContent.it.hero.primary}</span>
+      </a>
+      <a class="text-link" href="#treatments">
+        <span data-lang-content="en">{siteContent.en.hero.secondary}</span>
+        <span data-lang-content="it">{siteContent.it.hero.secondary}</span>
+      </a>
+    </div>
+    <p class="hero-note">
+      <span data-lang-content="en">{siteContent.en.hero.note}</span>
+      <span data-lang-content="it">{siteContent.it.hero.note}</span>
+    </p>
+  </div>
+</section>

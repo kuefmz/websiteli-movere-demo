@@ -1,0 +1,96 @@
+---
+import { BRAND } from "../config/brand";
+import { siteContent } from "../content/siteContent";
+import "../styles/global.css";
+import AboutSection from "../components/AboutSection.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import TreatmentsSection from "../components/TreatmentsSection.astro";
+import WhyMovere from "../components/WhyMovere.astro";
+import { withBase } from "../utils/paths";
+
+const seo = siteContent.en.seo;
+const pageTitle = seo.title;
+const pageDescription = seo.description;
+const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
+---
+
+<!doctype html>
+<html lang="en" data-lang="en" style={`--brandPrimary: ${BRAND.primary}; --brandBlack: ${BRAND.black}; --brandWhite: ${BRAND.white};`}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={seo.keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content={BRAND.black} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BRAND.name} />
+    <meta property="og:title" content={siteContent.en.seo.ogTitle} />
+    <meta property="og:description" content={siteContent.en.seo.ogDescription} />
+    <meta property="og:image" content={withBase(BRAND.heroImage)} />
+    <meta property="og:locale" content={siteContent.en.seo.locale} />
+    <meta property="og:locale:alternate" content={siteContent.it.seo.locale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={Astro.url.href} />
+    <link rel="alternate" hreflang="en" href={Astro.url.href} />
+    <link rel="alternate" hreflang="it" href={Astro.url.href} />
+    <link rel="alternate" hreflang="x-default" href={Astro.url.href} />
+    <link rel="icon" href={withBase(BRAND.favicon)} type="image/svg+xml" />
+    <link rel="icon" href={withBase("/favicon.ico")} sizes="any" />
+    <link rel="icon" href={withBase("/favicon-16x16.png")} sizes="16x16" type="image/png" />
+    <link rel="icon" href={withBase("/favicon-32x32.png")} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} sizes="180x180" />
+    <link rel="manifest" href={withBase("/site.webmanifest")} />
+    <link rel="mask-icon" href={withBase(BRAND.favicon)} color={BRAND.primary} />
+    <link rel="preload" as="image" href={withBase(BRAND.heroImage)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      <span data-lang-content="en">Skip to main content</span>
+      <span data-lang-content="it">Vai al contenuto principale</span>
+    </a>
+    <Header />
+    <main id="main">
+      <Hero />
+      <AboutSection />
+      <TreatmentsSection />
+      <WhyMovere />
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-wrap contact-grid">
+          <div class="contact-intro">
+            <p class="eyebrow accent-line">
+              <span data-lang-content="en">{siteContent.en.contact.eyebrow}</span>
+              <span data-lang-content="it">{siteContent.it.contact.eyebrow}</span>
+            </p>
+            <h2 id="contact-title">
+              <span data-lang-content="en">{siteContent.en.contact.title}</span>
+              <span data-lang-content="it">{siteContent.it.contact.title}</span>
+            </h2>
+            <p>
+              <span data-lang-content="en">{siteContent.en.contact.intro}</span>
+              <span data-lang-content="it">{siteContent.it.contact.intro}</span>
+            </p>
+          </div>
+          <div class="contact-card">
+            <p>
+              <span data-lang-content="en">{siteContent.en.contact.whatsappIntro}</span>
+              <span data-lang-content="it">{siteContent.it.contact.whatsappIntro}</span>
+            </p>
+            <a class="button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <span data-lang-content="en">{siteContent.en.contact.whatsappCta}</span>
+              <span data-lang-content="it">{siteContent.it.contact.whatsappCta}</span>
+            </a>
+            <p class="contact-note">
+              <span data-lang-content="en">{siteContent.en.contact.note}</span>
+              <span data-lang-content="it">{siteContent.it.contact.note}</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

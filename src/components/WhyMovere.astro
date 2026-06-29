@@ -1,0 +1,38 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="section method-section" id="method" aria-labelledby="method-title">
+  <div class="section-wrap split-layout">
+    <div>
+      <p class="eyebrow accent-line">
+        <span data-lang-content="en">{siteContent.en.method.eyebrow}</span>
+        <span data-lang-content="it">{siteContent.it.method.eyebrow}</span>
+      </p>
+      <h2 id="method-title">
+        <span data-lang-content="en">{siteContent.en.method.title}</span>
+        <span data-lang-content="it">{siteContent.it.method.title}</span>
+      </h2>
+    </div>
+    <ol class="method-list">
+      {siteContent.en.method.steps.map((step, index) => (
+        <li data-lang-content="en">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
+        </li>
+      ))}
+      {siteContent.it.method.steps.map((step, index) => (
+        <li data-lang-content="it">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
