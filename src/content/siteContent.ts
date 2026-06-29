@@ -136,7 +136,7 @@ export const siteContent = {
       title: "Tell us what you need help with.",
       intro:
         "Send a short appointment inquiry and we will get back to you to discuss availability and the most appropriate next step.",
-      whatsappIntro: "Prefer WhatsApp? Send a message and we will get back to you to discuss availability.",
+      whatsappIntro: "Send a message and we will get back to you to discuss availability.",
       whatsappCta: "Message on WhatsApp"
     },
     footer: {
