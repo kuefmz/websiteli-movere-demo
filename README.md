@@ -8,7 +8,7 @@ Premium one-page Astro website for **Movere**, a physiotherapy and movement care
 - TypeScript
 - React only for interactive components
 - Clean global CSS
-- WhatsApp appointment request links
+- WhatsApp-backed appointment inquiry flow
 
 ## Install
 
@@ -82,6 +82,17 @@ src/content/siteContent.ts
 
 Keep both languages complete when editing.
 
+The one-page site structure is:
+
+- Hero
+- About Movere
+- Treatments
+- How we work
+- Why choose Movere
+- For whom
+- Appointment inquiry/contact
+- Footer
+
 ## Edit Colors And Brand Settings
 
 Brand values live in:
@@ -136,9 +147,9 @@ Default language is English. All editable copy lives in `src/content/siteContent
 
 Components should render one structural section/card/step and swap the text with `data-lang-content="en"` and `data-lang-content="it"`. The language switcher updates `html[data-lang]`, `html[lang]`, local storage, and SEO metadata. Do not create separate visible sections for each language.
 
-## Appointment Link
+## Appointment Inquiry
 
-Appointment requests currently use WhatsApp instead of an embedded form.
+Appointment requests currently use a direct WhatsApp CTA in the contact area.
 
 Set the production number in `BRAND.contact.whatsappNumber` in `src/config/brand.ts`.
 Use the WhatsApp international format without `+`, spaces, or punctuation.

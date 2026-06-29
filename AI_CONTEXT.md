@@ -79,6 +79,8 @@ Do not hardcode editable copy inside components unless it is purely decorative o
 - `AboutSection.astro`
 - `TreatmentsSection.astro`
 - `WhyMovere.astro`
+- `WhyChooseSection.astro`
+- `SuitableSection.astro`
 - `OpeningSoon.astro`
 - `Footer.astro`
 
@@ -86,7 +88,7 @@ Do not hardcode editable copy inside components unless it is purely decorative o
 
 ## Appointment Request Rules
 
-Appointment requests currently link to WhatsApp. Set the production number in `BRAND.contact.whatsappNumber` in `src/config/brand.ts` using international format without `+`, spaces, or punctuation.
+Appointment requests currently use a direct WhatsApp CTA. Set the production number in `BRAND.contact.whatsappNumber` in `src/config/brand.ts` using international format without `+`, spaces, or punctuation.
 
 ## Logo And Browser Tab Assets
 

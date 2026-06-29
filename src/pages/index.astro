@@ -6,7 +6,9 @@ import AboutSection from "../components/AboutSection.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import SuitableSection from "../components/SuitableSection.astro";
 import TreatmentsSection from "../components/TreatmentsSection.astro";
+import WhyChooseSection from "../components/WhyChooseSection.astro";
 import WhyMovere from "../components/WhyMovere.astro";
 import { withBase } from "../utils/paths";
 
@@ -54,7 +56,9 @@ const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
       <AboutSection />
       <TreatmentsSection />
       <WhyMovere />
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <WhyChooseSection />
+      <SuitableSection />
+      <section class="section dark-section contact-section" id="contact" aria-labelledby="contact-title">
         <div class="section-wrap contact-grid">
           <div class="contact-intro">
             <p class="eyebrow accent-line">

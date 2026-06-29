@@ -1,0 +1,33 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="section why-section" id="why" aria-labelledby="why-title">
+  <div class="section-wrap">
+    <div class="section-heading section-heading-centered">
+      <p class="eyebrow accent-line">
+        <span data-lang-content="en">{siteContent.en.why.eyebrow}</span>
+        <span data-lang-content="it">{siteContent.it.why.eyebrow}</span>
+      </p>
+      <h2 id="why-title">
+        <span data-lang-content="en">{siteContent.en.why.title}</span>
+        <span data-lang-content="it">{siteContent.it.why.title}</span>
+      </h2>
+    </div>
+    <div class="benefit-grid">
+      {siteContent.en.why.items.map((item, index) => (
+        <article class="benefit-card">
+          <span class="benefit-mark">{String(index + 1).padStart(2, "0")}</span>
+          <h3>
+            <span data-lang-content="en">{item.title}</span>
+            <span data-lang-content="it">{siteContent.it.why.items[index].title}</span>
+          </h3>
+          <p>
+            <span data-lang-content="en">{item.text}</span>
+            <span data-lang-content="it">{siteContent.it.why.items[index].text}</span>
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
