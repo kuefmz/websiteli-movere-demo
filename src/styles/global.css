@@ -774,9 +774,7 @@ h3 {
 
 .footer-shell {
   display: grid;
-  grid-template-columns: minmax(240px, 1.2fr) minmax(220px, 0.8fr) auto;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: start;
+  align-items: center;
   padding: clamp(1.25rem, 3vw, 2rem);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
@@ -813,7 +811,7 @@ h3 {
 .footer-action {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
@@ -1019,7 +1017,7 @@ h3 {
   }
 
   .footer-action {
-    justify-content: start;
+    justify-content: center;
   }
 
   .footer-bottom {

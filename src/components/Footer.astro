@@ -9,32 +9,8 @@ const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
 
 <footer class="site-footer">
   <div class="section-wrap footer-shell">
-    <div class="footer-brand">
-      <Logo variant="light" size="small" />
-      <p>
-        <span data-lang-content="en">{BRAND.location.en}</span>
-        <span data-lang-content="it">{BRAND.location.it}</span>
-      </p>
-    </div>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="#about">
-        <span data-lang-content="en">{siteContent.en.nav.about}</span>
-        <span data-lang-content="it">{siteContent.it.nav.about}</span>
-      </a>
-      <a href="#treatments">
-        <span data-lang-content="en">{siteContent.en.nav.treatments}</span>
-        <span data-lang-content="it">{siteContent.it.nav.treatments}</span>
-      </a>
-      <a href="#method">
-        <span data-lang-content="en">{siteContent.en.nav.method}</span>
-        <span data-lang-content="it">{siteContent.it.nav.method}</span>
-      </a>
-      <a href="#contact">
-        <span data-lang-content="en">{siteContent.en.nav.contact}</span>
-        <span data-lang-content="it">{siteContent.it.nav.contact}</span>
-      </a>
-    </nav>
     <div class="footer-action">
+      <Logo variant="light" size="small" />
       <LanguageSwitcher client:load />
       <a class="button button-small" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
         <span data-lang-content="en">{BRAND.cta.en}</span>
@@ -46,7 +22,7 @@ const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
       <p>
         <span data-lang-content="en">{siteContent.en.footer.builtBy}</span>
         <span data-lang-content="it">{siteContent.it.footer.builtBy}</span>
-        <a href={BRAND.websiteliUrl} target="_blank" rel="noopener noreferrer">Websiteli.ch</a>
+        <a href={BRAND.websiteliUrl} target="_blank" rel="noopener noreferrer">websiteli.ch</a>
       </p>
     </div>
   </div>

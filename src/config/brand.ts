@@ -27,5 +27,5 @@ export const BRAND = {
     en: "Explore treatments",
     it: "Scopri i trattamenti"
   },
-  websiteliUrl: "https://websiteli.ch/"
+  websiteliUrl: "https://websiteli.ch/?utm_source=google&utm_medium=referral&utm_campaign=movere_demo"
 } as const;
