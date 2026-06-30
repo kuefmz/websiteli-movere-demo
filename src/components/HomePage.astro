@@ -1,0 +1,281 @@
+---
+import { BRAND } from "../config/brand";
+import { languageMeta, languages, siteContent, type Language } from "../content/siteContent";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const content = siteContent[lang];
+const origin = Astro.site?.toString().replace(/\/$/, "") ?? "https://kuefmz.github.io";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const currentPath = languageMeta[lang].path;
+const canonical = `${origin}${base}${currentPath}`;
+const absoluteUrl = (path: string) => `${origin}${withBase(path)}`;
+const appointmentHref = "#appointment";
+const whatsappUrl = `https://wa.me/${BRAND.contact.whatsappNumber}`;
+const contactHref = whatsappUrl;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalClinic", "LocalBusiness"],
+  name: BRAND.name,
+  description: content.seo.description,
+  url: canonical,
+  telephone: BRAND.contact.phoneHref,
+  email: BRAND.contact.email,
+  image: absoluteUrl(BRAND.heroImage),
+  medicalSpecialty: ["Physiotherapy", "Osteopathy", "Rehabilitation"],
+  areaServed: BRAND.contact.city,
+  availableLanguage: languages.map((code) => languageMeta[code].label),
+  sameAs: []
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{content.seo.title}</title>
+    <meta name="description" content={content.seo.description} />
+    <meta name="keywords" content={content.seo.keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content={BRAND.colors.black} />
+    <link rel="canonical" href={canonical} />
+    {languages.map((code) => (
+      <link rel="alternate" hreflang={code} href={`${origin}${base}${languageMeta[code].path}`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${origin}${base}/`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BRAND.name} />
+    <meta property="og:title" content={content.seo.title} />
+    <meta property="og:description" content={content.seo.description} />
+    <meta property="og:image" content={absoluteUrl(BRAND.heroImage)} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={languageMeta[lang].locale} />
+    {languages.filter((code) => code !== lang).map((code) => (
+      <meta property="og:locale:alternate" content={languageMeta[code].locale} />
+    ))}
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={withBase(BRAND.favicon)} type="image/png" />
+    <link rel="apple-touch-icon" href={withBase(BRAND.favicon)} />
+    <link rel="manifest" href={withBase("/site.webmanifest")} />
+    <link rel="preload" as="image" href={withBase(BRAND.heroImage)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand-lockup" href={languageMeta[lang].path === "/" ? withBase("/") : withBase(languageMeta[lang].path)} aria-label={`${BRAND.name} home`}>
+          <img src={withBase(BRAND.logo)} alt="" width="1742" height="903" decoding="async" />
+        </a>
+        <input class="nav-state" id="nav-state" type="checkbox" aria-hidden="true" />
+        <label class="nav-toggle" for="nav-state" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </label>
+        <div class="nav-panel">
+          <a href="#conditions">{content.nav.conditions}</a>
+          <a href="#treatments">{content.nav.treatments}</a>
+          <a href="#about">{content.nav.about}</a>
+          <a href="#locations">{content.nav.locations}</a>
+          <a href="#blog">{content.nav.blog}</a>
+        </div>
+        <div class="nav-actions">
+          <a class="phone-pill" href={contactHref} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${BRAND.contact.phoneDisplay}`}>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.7 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.2 21.5 2.5 13.8 2.5 4.3 2.5 3.6 3.1 3 3.8 3h3.5c.7 0 1.3.6 1.3 1.3 0 1.1.2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.2 2.2Z"/></svg>
+            {BRAND.contact.phoneDisplay}
+          </a>
+          <details class="language-menu">
+            <summary aria-label={content.footer.language}>
+              <span>{languageMeta[lang].flag}</span>{lang.toUpperCase()}
+            </summary>
+            <div class="language-list">
+              {languages.map((code) => (
+                <a class:list={[code === lang && "is-active"]} href={withBase(languageMeta[code].path)} lang={code} aria-current={code === lang ? "page" : undefined}>
+                  <span>{languageMeta[code].flag}</span>{code.toUpperCase()}
+                </a>
+              ))}
+            </div>
+          </details>
+          <a class="button button-light nav-cta" href={appointmentHref}>
+            <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1.5A2.5 2.5 0 0 1 22 6.5v12A2.5 2.5 0 0 1 19.5 21h-15A2.5 2.5 0 0 1 2 18.5v-12A2.5 2.5 0 0 1 4.5 4H6V3a1 1 0 0 1 1-1Zm12.5 8h-15v8.5c0 .28.22.5.5.5h14c.28 0 .5-.22.5-.5V10ZM5 6a.5.5 0 0 0-.5.5V8h15V6.5A.5.5 0 0 0 19 6H5Z"/></svg>
+            {content.cta.appointment}
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img class="hero-image" src={withBase(BRAND.heroImage)} alt="Physiotherapy treatment room prepared for a personalized movement assessment" width="1600" height="1000" />
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="section-wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">{content.hero.eyebrow}</p>
+            <h1 id="hero-title">{content.hero.title}</h1>
+            <p class="tagline">{content.hero.tagline}</p>
+            <p class="service-line">{content.hero.service}</p>
+            <p class="hero-text">{content.hero.text}</p>
+            <div class="hero-actions">
+              <a class="button" href={appointmentHref}>
+                <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1.5A2.5 2.5 0 0 1 22 6.5v12A2.5 2.5 0 0 1 19.5 21h-15A2.5 2.5 0 0 1 2 18.5v-12A2.5 2.5 0 0 1 4.5 4H6V3a1 1 0 0 1 1-1Zm12.5 8h-15v8.5c0 .28.22.5.5.5h14c.28 0 .5-.22.5-.5V10ZM5 6a.5.5 0 0 0-.5.5V8h15V6.5A.5.5 0 0 0 19 6H5Z"/></svg>
+                {content.cta.appointment}
+              </a>
+              <a class="button button-ghost" href="#treatments">{content.cta.treatments}</a>
+            </div>
+            <p class="hero-note">{content.hero.note}</p>
+          </div>
+          <div class="hero-panel" aria-label="Clinic highlights">
+            {content.trust.map((item) => <span>{item}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Benefits">
+        <div class="section-wrap trust-grid">
+          {content.trust.map((item) => (
+            <div>{item}</div>
+          ))}
+        </div>
+      </section>
+
+      <section class="section conditions-section" id="conditions" aria-labelledby="conditions-title">
+        <div class="section-wrap section-intro">
+          <div>
+            <p class="eyebrow">{content.conditions.eyebrow}</p>
+            <h2 id="conditions-title">{content.conditions.title}</h2>
+          </div>
+          <p>{content.conditions.intro}</p>
+        </div>
+        <div class="section-wrap card-grid conditions-grid">
+          {content.conditions.items.map((item, index) => (
+            <article class="clinic-card">
+              <span class="card-index">{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section treatments-section" id="treatments" aria-labelledby="treatments-title">
+        <div class="section-wrap split-heading">
+          <div>
+            <p class="eyebrow">{content.treatments.eyebrow}</p>
+            <h2 id="treatments-title">{content.treatments.title}</h2>
+          </div>
+          <p>{content.treatments.intro}</p>
+        </div>
+        <div class="section-wrap treatment-list">
+          {content.treatments.items.map((item) => (
+            <article>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="section-wrap inline-cta">
+          <a class="button" href={appointmentHref}>
+            <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1.5A2.5 2.5 0 0 1 22 6.5v12A2.5 2.5 0 0 1 19.5 21h-15A2.5 2.5 0 0 1 2 18.5v-12A2.5 2.5 0 0 1 4.5 4H6V3a1 1 0 0 1 1-1Zm12.5 8h-15v8.5c0 .28.22.5.5.5h14c.28 0 .5-.22.5-.5V10ZM5 6a.5.5 0 0 0-.5.5V8h15V6.5A.5.5 0 0 0 19 6H5Z"/></svg>
+            {content.cta.appointment}
+          </a>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-wrap about-grid">
+          <div>
+            <p class="eyebrow">{content.about.eyebrow}</p>
+            <h2 id="about-title">{content.about.title}</h2>
+          </div>
+          <div class="about-copy">
+            <p>{content.about.body}</p>
+            <div class="about-points">
+              {content.about.points.map((point, index) => (
+                <article>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <p>{point}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section locations-section" id="locations" aria-labelledby="locations-title">
+        <div class="section-wrap split-heading">
+          <div>
+            <p class="eyebrow">{content.locations.eyebrow}</p>
+            <h2 id="locations-title">{content.locations.title}</h2>
+          </div>
+          <p>{content.locations.text}</p>
+        </div>
+        <div class="section-wrap location-cards">
+          {content.locations.cards.map((card) => <article>{card}</article>)}
+        </div>
+      </section>
+
+      <section class="section blog-section" id="blog" aria-labelledby="blog-title">
+        <div class="section-wrap blog-panel">
+          <p class="eyebrow">{content.blog.eyebrow}</p>
+          <h2 id="blog-title">{content.blog.title}</h2>
+          <p>{content.blog.text}</p>
+        </div>
+      </section>
+
+      <section class="section appointment-section" id="appointment" aria-labelledby="appointment-title">
+        <div class="section-wrap appointment-grid">
+          <div>
+            <p class="eyebrow">{content.appointment.eyebrow}</p>
+            <h2 id="appointment-title">{content.appointment.title}</h2>
+            <p>{content.appointment.text}</p>
+            <div class="appointment-actions">
+              <a class="button button-light" href={contactHref} target="_blank" rel="noopener noreferrer">WhatsApp {BRAND.contact.phoneDisplay}</a>
+              <a class="button button-ghost-light" href={`mailto:${BRAND.contact.email}`}>{BRAND.contact.email}</a>
+            </div>
+          </div>
+          <div class="appointment-card">
+            {content.appointment.fields.map((field) => <span>{field}</span>)}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-wrap footer-grid">
+        <div>
+          <img src={withBase(BRAND.logo)} alt={BRAND.name} width="1742" height="903" loading="lazy" />
+          <p>{content.hero.service}</p>
+        </div>
+        <div>
+          <h2>{content.footer.contact}</h2>
+          <a href={contactHref} target="_blank" rel="noopener noreferrer">{BRAND.contact.phoneDisplay}</a>
+          <a href={`mailto:${BRAND.contact.email}`}>{BRAND.contact.email}</a>
+        </div>
+        <div>
+          <h2>{content.footer.language}</h2>
+          <div class="footer-languages">
+            {languages.map((code) => <a href={withBase(languageMeta[code].path)}>{languageMeta[code].flag} {code.toUpperCase()}</a>)}
+          </div>
+        </div>
+        <div>
+          <h2>{content.footer.navigation}</h2>
+          <a href="#conditions">{content.nav.conditions}</a>
+          <a href="#treatments">{content.nav.treatments}</a>
+          <a href="#appointment">{content.cta.appointment}</a>
+        </div>
+      </div>
+      <div class="section-wrap footer-bottom">
+        <p>© {new Date().getFullYear()} {BRAND.name}</p>
+        <a href={BRAND.websiteliUrl} target="_blank" rel="noopener noreferrer">websiteli.ch</a>
+      </div>
+    </footer>
+  </body>
+</html>

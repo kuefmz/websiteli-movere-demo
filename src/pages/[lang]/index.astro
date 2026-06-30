@@ -1,0 +1,15 @@
+---
+import HomePage from "../../components/HomePage.astro";
+import { languages, type Language } from "../../content/siteContent";
+import "../../styles/global.css";
+
+export function getStaticPaths() {
+  return languages
+    .filter((lang) => lang !== "it")
+    .map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+---
+
+<HomePage lang={lang} />

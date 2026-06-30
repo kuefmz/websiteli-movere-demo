@@ -1,31 +1,23 @@
 export const BRAND = {
-  name: "Movere",
+  name: "MOVERE clinic",
+  tagline: "movimento e vita",
   colors: {
-    black: "#111111",
+    black: "#080A09",
     white: "#FFFFFF",
-    red: "#C1121F",
-    soft: "#F7F5F2",
-    muted: "#6F6A66"
+    red: "#B83B34",
+    soft: "#F6F2EC",
+    muted: "#656B67"
   },
-  logo: "/assets/movere-logo-reference.png",
-  favicon: "/assets/logo.png",
+  logo: "/assets/movere-clinic-logo.png",
+  favicon: "/assets/movere-logo.png",
   heroImage: "/assets/movere-hero.png",
-  location: {
-    en: "Florence, Italy",
-    it: "Firenze, Italia"
-  },
   contact: {
-    city: "Florence",
-    country: "Italy",
-    whatsappNumber: "15551234567"
-  },
-  cta: {
-    en: "Request an appointment",
-    it: "Richiedi un appuntamento"
-  },
-  secondaryCta: {
-    en: "Explore treatments",
-    it: "Scopri i trattamenti"
+    phoneDisplay: "+39 300 000 0000",
+    phoneHref: "+393000000000",
+    whatsappNumber: "393000000000",
+    email: "info@movereclinic.it",
+    city: "Italia",
+    country: "IT"
   },
   websiteliUrl: "https://websiteli.ch/?utm_source=google&utm_medium=referral&utm_campaign=movere_demo"
 } as const;

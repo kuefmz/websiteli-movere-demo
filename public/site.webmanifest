@@ -1,14 +1,14 @@
 {
-  "name": "Movere",
-  "short_name": "Movere",
+  "name": "MOVERE clinic",
+  "short_name": "MOVERE",
   "icons": [
     {
-      "src": "assets/logo.png",
-      "sizes": "377x370",
+      "src": "assets/movere-logo.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "theme_color": "#111111",
-  "background_color": "#FFFFFF",
+  "background_color": "#F8F6F1",
   "display": "standalone"
 }
