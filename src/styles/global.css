@@ -97,9 +97,10 @@ button {
 
 .nav-shell {
   min-height: 84px;
-  max-width: 1320px;
+  width: 100%;
+  max-width: 1680px;
   margin-inline: auto;
-  padding-inline: clamp(1rem, 3.5vw, 2.5rem);
+  padding-inline: clamp(1.25rem, 2vw, 2rem);
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -141,6 +142,7 @@ button {
 .nav-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.55rem;
 }
 
@@ -339,9 +341,9 @@ button {
 
 .hero {
   position: relative;
-  min-height: clamp(680px, 88vh, 840px);
+  min-height: clamp(430px, 58vh, 560px);
   display: grid;
-  align-items: end;
+  align-items: start;
   overflow: hidden;
   background: var(--color-black);
   color: var(--color-white);
@@ -373,7 +375,11 @@ button {
   grid-template-columns: minmax(0, 680px) minmax(220px, 330px);
   gap: clamp(2rem, 6vw, 5rem);
   align-items: end;
-  padding-block: clamp(5rem, 10vw, 8rem) clamp(3.5rem, 7vw, 5.5rem);
+  padding-block: clamp(0.75rem, 1.6vw, 1.4rem) clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.hero-grid-single {
+  grid-template-columns: minmax(0, 720px);
 }
 
 .eyebrow {
@@ -423,14 +429,14 @@ h3 {
 }
 
 .tagline {
-  margin: 0.2rem 0 0;
+  margin: 0.45rem 0 0;
   font-family: var(--font-display);
   font-size: clamp(1.55rem, 3vw, 2.4rem);
   color: rgb(255 255 255 / 0.86);
 }
 
 .service-line {
-  margin: 1.4rem 0 0;
+  margin: 0.45rem 0 0;
   color: var(--color-accent-soft);
   font-size: clamp(1.05rem, 1.4vw, 1.28rem);
   font-weight: 850;
@@ -909,11 +915,11 @@ h3 {
   }
 
   .hero {
-    min-height: 720px;
+    min-height: 560px;
   }
 
   .hero-grid {
-    padding-block-start: 4rem;
+    padding-block-start: 0.75rem;
   }
 
   h1 {

@@ -1,5 +1,5 @@
 export const BRAND = {
-  name: "MOVERE clinic",
+  name: "MOVERE",
   tagline: "movimento e vita",
   colors: {
     black: "#080A09",

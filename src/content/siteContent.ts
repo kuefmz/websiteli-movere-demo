@@ -290,9 +290,9 @@ const commonTreatments = {
 export const siteContent = {
   it: {
     seo: {
-      title: "MOVERE clinic | Fisioterapia e Osteopatia",
+      title: "MOVERE | Fisioterapia e Osteopatia",
       description:
-        "MOVERE clinic offre fisioterapia, osteopatia e riabilitazione personalizzata per dolore, postura, sport, neurologia e trattamenti a domicilio.",
+        "MOVERE offre fisioterapia, osteopatia e riabilitazione personalizzata per dolore, postura, sport, neurologia e trattamenti a domicilio.",
       keywords:
         "fisioterapia, osteopatia, riabilitazione sportiva, mal di schiena, cervicalgia, sciatica, terapia manuale, fisioterapia geriatrica"
     },
@@ -304,20 +304,20 @@ export const siteContent = {
       blog: "Blog"
     },
     cta: {
-      appointment: "Book now",
+      appointment: "Prenota ora",
       treatments: "Vedi trattamenti",
       phone: "Chiama"
     },
     hero: {
-      eyebrow: "MOVERE clinic",
-      title: "MOVERE clinic",
+      eyebrow: "MOVERE",
+      title: "MOVERE",
       tagline: "movimento e vita",
       service: "Fisioterapia e Osteopatia",
       text:
         "Valutazione, trattamento e riabilitazione per dolore, postura, infortuni sportivi e recupero funzionale. Un percorso costruito sul tuo corpo, sui tuoi obiettivi e sulla qualità del movimento.",
       note: "Prima visita accurata, spiegazioni chiare e un piano di lavoro concreto."
     },
-    trust: ["Percorsi su misura", "Fisioterapia + osteopatia", "Sport, postura, riabilitazione", "Trattamenti a domicilio"],
+    trust: ["Percorsi su misura", "Fisioterapia e osteopatia", "Sport, postura, riabilitazione", "Trattamenti a domicilio"],
     conditions: {
       eyebrow: "Patologie e disturbi",
       title: "Dal dolore quotidiano al recupero sportivo: individuiamo cosa limita il movimento.",
@@ -336,7 +336,7 @@ export const siteContent = {
       eyebrow: "Chi sono",
       title: "Un approccio clinico, umano e orientato a risultati sostenibili.",
       body:
-        "MOVERE clinic nasce per offrire una presa in carico attenta: ascoltare, valutare, trattare e accompagnare il recupero con metodo. L'obiettivo è aiutarti a ridurre il dolore, recuperare funzione e capire come proteggere il movimento nel tempo.",
+        "MOVERE nasce per offrire una presa in carico attenta: ascoltare, valutare, trattare e accompagnare il recupero con metodo. L'obiettivo è aiutarti a ridurre il dolore, recuperare funzione e capire come proteggere il movimento nel tempo.",
       points: ["Valutazione individuale e obiettivi condivisi", "Piano terapeutico comprensibile, senza passaggi inutili", "Progressione verso autonomia, prevenzione e mantenimento"]
     },
     locations: {
@@ -367,9 +367,9 @@ export const siteContent = {
   },
   en: {
     seo: {
-      title: "MOVERE clinic | Physiotherapy and Osteopathy",
+      title: "MOVERE | Physiotherapy and Osteopathy",
       description:
-        "MOVERE clinic provides personalized physiotherapy, osteopathy and rehabilitation for pain, posture, sport, neurological recovery and home treatments.",
+        "MOVERE provides personalized physiotherapy, osteopathy and rehabilitation for pain, posture, sport, neurological recovery and home treatments.",
       keywords:
         "physiotherapy, osteopathy, sports rehabilitation, back pain, neck pain, sciatica, manual therapy, geriatric physiotherapy"
     },
@@ -386,15 +386,15 @@ export const siteContent = {
       phone: "Call"
     },
     hero: {
-      eyebrow: "MOVERE clinic",
-      title: "MOVERE clinic",
+      eyebrow: "MOVERE",
+      title: "MOVERE",
       tagline: "movement is life",
       service: "Physiotherapy and Osteopathy",
       text:
         "Assessment, treatment and rehabilitation for pain, posture, sports injuries and functional recovery. A pathway built around your body, your goals and better movement quality.",
       note: "A careful first assessment, clear explanations and a concrete treatment plan."
     },
-    trust: ["Tailored care pathways", "Physiotherapy + osteopathy", "Sport, posture, rehabilitation", "Home treatments available"],
+    trust: ["Tailored care pathways", "Physiotherapy and Osteopathy", "Sport, posture, rehabilitation", "Home treatments available"],
     conditions: {
       eyebrow: "Conditions",
       title: "From daily pain to sports recovery: we identify what limits your movement.",
@@ -413,15 +413,15 @@ export const siteContent = {
       eyebrow: "About",
       title: "A clinical, human approach focused on sustainable results.",
       body:
-        "MOVERE clinic was created to offer attentive care: listen, assess, treat and guide recovery with method. The goal is to reduce pain, restore function and help you understand how to protect your movement over time.",
+        "MOVERE was created to offer attentive care: listen, assess, treat and guide recovery with method. The goal is to reduce pain, restore function and help you understand how to protect your movement over time.",
       points: ["Individual assessment and shared goals", "A clear treatment plan without unnecessary steps", "Progression toward autonomy, prevention and maintenance"]
     },
     locations: {
       eyebrow: "Locations",
-      title: "Clinic appointments and home treatments.",
+      title: "Appointments and home treatments.",
       text:
         "Visits are organized by appointment, with enough time to assess and treat carefully. When travel is difficult, a home-treatment pathway can be discussed.",
-      cards: ["Private clinic by appointment", "Care for sport, work and everyday life", "Home treatment availability"]
+      cards: ["Private appointments", "Care for sport, work and everyday life", "Home treatment availability"]
     },
     blog: {
       eyebrow: "Blog",
@@ -444,9 +444,9 @@ export const siteContent = {
   },
   es: {
     seo: {
-      title: "MOVERE clinic | Fisioterapia y Osteopatia",
+      title: "MOVERE | Fisioterapia y Osteopatia",
       description:
-        "MOVERE clinic ofrece fisioterapia, osteopatia y rehabilitacion personalizada para dolor, postura, deporte, neurologia y tratamientos a domicilio.",
+        "MOVERE ofrece fisioterapia, osteopatia y rehabilitacion personalizada para dolor, postura, deporte, neurologia y tratamientos a domicilio.",
       keywords:
         "fisioterapia, osteopatia, rehabilitacion deportiva, dolor de espalda, cervicalgia, ciatica, terapia manual, fisioterapia geriatrica"
     },
@@ -458,20 +458,20 @@ export const siteContent = {
       blog: "Blog"
     },
     cta: {
-      appointment: "Book now",
+      appointment: "Reservar ahora",
       treatments: "Ver tratamientos",
       phone: "Llamar"
     },
     hero: {
-      eyebrow: "MOVERE clinic",
-      title: "MOVERE clinic",
+      eyebrow: "MOVERE",
+      title: "MOVERE",
       tagline: "el movimiento es vida",
       service: "Fisioterapia y Osteopatia",
       text:
         "Evaluación, tratamiento y rehabilitación para dolor, postura, lesiones deportivas y recuperación funcional. Un proceso construido alrededor de tu cuerpo, tus objetivos y la calidad del movimiento.",
       note: "Primera valoración precisa, explicaciones claras y un plan de trabajo concreto."
     },
-    trust: ["Procesos a medida", "Fisioterapia + osteopatia", "Deporte, postura, rehabilitacion", "Tratamientos a domicilio"],
+    trust: ["Procesos a medida", "Fisioterapia y Osteopatia", "Deporte, postura, rehabilitacion", "Tratamientos a domicilio"],
     conditions: {
       eyebrow: "Patologias y molestias",
       title: "Del dolor diario a la recuperación deportiva: identificamos qué limita tu movimiento.",
@@ -490,7 +490,7 @@ export const siteContent = {
       eyebrow: "Quien soy",
       title: "Un enfoque clínico, humano y orientado a resultados sostenibles.",
       body:
-        "MOVERE clinic nace para ofrecer una atención cuidadosa: escuchar, valorar, tratar y acompañar la recuperación con método. El objetivo es reducir el dolor, recuperar función y ayudarte a proteger el movimiento a largo plazo.",
+        "MOVERE nace para ofrecer una atención cuidadosa: escuchar, valorar, tratar y acompañar la recuperación con método. El objetivo es reducir el dolor, recuperar función y ayudarte a proteger el movimiento a largo plazo.",
       points: ["Valoración individual y objetivos compartidos", "Plan terapéutico claro, sin pasos innecesarios", "Progresión hacia autonomía, prevención y mantenimiento"]
     },
     locations: {
@@ -521,9 +521,9 @@ export const siteContent = {
   },
   fr: {
     seo: {
-      title: "MOVERE clinic | Physiotherapie et Osteopathie",
+      title: "MOVERE | Physiotherapie et Osteopathie",
       description:
-        "MOVERE clinic propose physiotherapie, osteopathie et reeducation personnalisee pour douleur, posture, sport, neurologie et soins a domicile.",
+        "MOVERE propose physiotherapie, osteopathie et reeducation personnalisee pour douleur, posture, sport, neurologie et soins a domicile.",
       keywords:
         "physiotherapie, osteopathie, reeducation sportive, mal de dos, cervicalgie, sciatique, therapie manuelle, physiotherapie geriatrique"
     },
@@ -535,20 +535,20 @@ export const siteContent = {
       blog: "Blog"
     },
     cta: {
-      appointment: "Book now",
+      appointment: "Réserver",
       treatments: "Voir les traitements",
       phone: "Appeler"
     },
     hero: {
-      eyebrow: "MOVERE clinic",
-      title: "MOVERE clinic",
+      eyebrow: "MOVERE",
+      title: "MOVERE",
       tagline: "le mouvement, c'est la vie",
       service: "Physiotherapie et Osteopathie",
       text:
         "Évaluation, traitement et rééducation pour douleur, posture, blessures sportives et récupération fonctionnelle. Un parcours construit autour de votre corps, vos objectifs et la qualité du mouvement.",
       note: "Première évaluation attentive, explications claires et plan de travail concret."
     },
-    trust: ["Parcours sur mesure", "Physiotherapie + osteopathie", "Sport, posture, reeducation", "Soins a domicile disponibles"],
+    trust: ["Parcours sur mesure", "Physiotherapie et Osteopathie", "Sport, posture, reeducation", "Soins a domicile disponibles"],
     conditions: {
       eyebrow: "Pathologies et troubles",
       title: "De la douleur quotidienne au retour au sport: nous identifions ce qui limite le mouvement.",
@@ -567,7 +567,7 @@ export const siteContent = {
       eyebrow: "A propos",
       title: "Une approche clinique, humaine et orientée vers des résultats durables.",
       body:
-        "MOVERE clinic a été créée pour offrir une prise en charge attentive: écouter, évaluer, traiter et accompagner la récupération avec méthode. L'objectif est de réduire la douleur, restaurer la fonction et protéger le mouvement dans le temps.",
+        "MOVERE a été créée pour offrir une prise en charge attentive: écouter, évaluer, traiter et accompagner la récupération avec méthode. L'objectif est de réduire la douleur, restaurer la fonction et protéger le mouvement dans le temps.",
       points: ["Évaluation individuelle et objectifs partagés", "Plan thérapeutique clair, sans étapes inutiles", "Progression vers autonomie, prévention et maintien"]
     },
     locations: {
