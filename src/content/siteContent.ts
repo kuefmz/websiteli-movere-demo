@@ -317,7 +317,7 @@ export const siteContent = {
         "Valutazione, trattamento e riabilitazione per dolore, postura, infortuni sportivi e recupero funzionale. Un percorso costruito sul tuo corpo, sui tuoi obiettivi e sulla qualità del movimento.",
       note: "Prima visita accurata, spiegazioni chiare e un piano di lavoro concreto."
     },
-    trust: ["Percorsi su misura", "Fisioterapia e osteopatia", "Riabilitazione e prevenzione", "Trattamenti a domicilio"],
+    trust: ["Percorsi su misura", "Fisioterapia e Osteopatia", "Sport, postura, riabilitazione", "Trattamenti a domicilio"],
     conditions: {
       eyebrow: "Patologie e disturbi",
       title: "Dal dolore quotidiano al recupero sportivo: individuiamo cosa limita il movimento.",
