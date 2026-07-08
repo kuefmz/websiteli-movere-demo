@@ -45,14 +45,13 @@ The repository includes `.github/workflows/deploy.yml`. Every push to `main` ins
 Production URL:
 
 ```text
-https://kuefmz.github.io/websiteli-movere-demo/
+https://movereclinic.com
 ```
 
 `astro.config.mjs` must keep:
 
 ```js
-site: "https://kuefmz.github.io",
-base: "/websiteli-movere-demo"
+site: "https://movereclinic.com"
 ```
 
 All public assets must be referenced through `withBase(...)` or `import.meta.env.BASE_URL` so images, CSS, JS, favicon files, and the manifest resolve below the GitHub Pages base path.

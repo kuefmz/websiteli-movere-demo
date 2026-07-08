@@ -31,14 +31,13 @@ Do not redesign, redraw, trace, generate, or replace the logo unless explicitly 
 Production URL:
 
 ```text
-https://kuefmz.github.io/websiteli-movere-demo/
+https://movereclinic.com
 ```
 
 `astro.config.mjs` must keep:
 
 ```js
-site: "https://movereclinic.com",
-base: "/",
+site: "https://movereclinic.com"
 ```
 
 Use `withBase(...)` or `import.meta.env.BASE_URL` for public assets, including logo, hero images, favicon files, manifest, and preloads.
