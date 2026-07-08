@@ -67,6 +67,15 @@ const jsonLd = {
     <link rel="apple-touch-icon" href={withBase(BRAND.favicon)} />
     <link rel="manifest" href={withBase("/site.webmanifest")} />
     <link rel="preload" as="image" href={withBase(BRAND.heroImage)} />
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-Z19WMC970B"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Z19WMC970B");
+    </script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
