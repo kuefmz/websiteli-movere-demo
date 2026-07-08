@@ -9,6 +9,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const content = siteContent[lang];
+const aboutPhoto = "/assets/jamal-alzaidy.jpeg";
 const origin = Astro.site?.toString().replace(/\/$/, "") ?? "https://kuefmz.github.io";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const currentPath = languageMeta[lang].path;
@@ -80,11 +81,11 @@ const jsonLd = {
           <span></span><span></span><span></span>
         </label>
         <div class="nav-panel">
+          <a href="#top">{content.nav.home}</a>
           <a href="#conditions">{content.nav.conditions}</a>
           <a href="#treatments">{content.nav.treatments}</a>
           <a href="#about">{content.nav.about}</a>
           <a href="#locations">{content.nav.locations}</a>
-          <a href="#blog">{content.nav.blog}</a>
         </div>
         <div class="nav-actions">
           <details class="language-menu">
@@ -196,21 +197,50 @@ const jsonLd = {
       </section>
 
       <section class="section about-section" id="about" aria-labelledby="about-title">
-        <div class="section-wrap about-grid">
-          <div>
-            <p class="eyebrow">{content.about.eyebrow}</p>
-            <h2 id="about-title">{content.about.title}</h2>
-          </div>
-          <div class="about-copy">
-            <p>{content.about.body}</p>
-            <div class="about-points">
-              {content.about.points.map((point, index) => (
-                <article>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p>{point}</p>
-                </article>
-              ))}
+        <div class="section-wrap about-layout">
+          <div class="about-heading">
+            <div>
+              <p class="eyebrow">{content.about.eyebrow}</p>
+              <h2 id="about-title">{content.about.title}</h2>
             </div>
+            <p>{content.about.intro}</p>
+          </div>
+
+          <div class="about-main">
+            <aside class="about-profile" aria-label={content.about.subtitle}>
+              <div class="about-photo-frame">
+                <img
+                  class="about-photo"
+                  src={withBase(aboutPhoto)}
+                  alt={`${content.about.title}, ${content.about.subtitle}`}
+                  width="910"
+                  height="802"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div>
+                <h3>{content.about.title}</h3>
+                <p>{content.about.subtitle}</p>
+              </div>
+              <div class="about-credentials" aria-label="Qualifications">
+                {content.about.credentials.map((credential) => <span>{credential}</span>)}
+              </div>
+            </aside>
+
+            <div class="about-story">
+              {content.about.body.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </div>
+
+          <div class="about-points">
+            {content.about.points.map((point) => (
+              <article>
+                <span>{point.label}</span>
+                <h3>{point.title}</h3>
+                <p>{point.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -225,14 +255,6 @@ const jsonLd = {
         </div>
         <div class="section-wrap location-cards">
           {content.locations.cards.map((card) => <article>{card}</article>)}
-        </div>
-      </section>
-
-      <section class="section blog-section" id="blog" aria-labelledby="blog-title">
-        <div class="section-wrap blog-panel">
-          <p class="eyebrow">{content.blog.eyebrow}</p>
-          <h2 id="blog-title">{content.blog.title}</h2>
-          <p>{content.blog.text}</p>
         </div>
       </section>
 
@@ -273,8 +295,11 @@ const jsonLd = {
         </div>
         <div>
           <h2>{content.footer.navigation}</h2>
+          <a href="#top">{content.nav.home}</a>
           <a href="#conditions">{content.nav.conditions}</a>
           <a href="#treatments">{content.nav.treatments}</a>
+          <a href="#about">{content.nav.about}</a>
+          <a href="#locations">{content.nav.locations}</a>
           <a href="#appointment">{content.cta.appointment}</a>
         </div>
       </div>

@@ -37,8 +37,8 @@ https://kuefmz.github.io/websiteli-movere-demo/
 `astro.config.mjs` must keep:
 
 ```js
-site: "https://kuefmz.github.io",
-base: "/websiteli-movere-demo"
+site: "https://movereclinic.com",
+base: "/",
 ```
 
 Use `withBase(...)` or `import.meta.env.BASE_URL` for public assets, including logo, hero images, favicon files, manifest, and preloads.

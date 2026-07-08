@@ -297,11 +297,11 @@ export const siteContent = {
         "fisioterapia, osteopatia, riabilitazione sportiva, mal di schiena, cervicalgia, sciatica, terapia manuale, fisioterapia geriatrica"
     },
     nav: {
+      home: "Home",
       conditions: "Patologie e disturbi",
       treatments: "Trattamenti",
       about: "Chi sono",
-      locations: "Sedi",
-      blog: "Blog"
+      locations: "Sedi"
     },
     cta: {
       appointment: "Prenota ora",
@@ -311,13 +311,13 @@ export const siteContent = {
     hero: {
       eyebrow: "MOVERE",
       title: "MOVERE",
-      tagline: "movimento e vita",
+      tagline: "movimento è vita",
       service: "Fisioterapia e Osteopatia",
       text:
         "Valutazione, trattamento e riabilitazione per dolore, postura, infortuni sportivi e recupero funzionale. Un percorso costruito sul tuo corpo, sui tuoi obiettivi e sulla qualità del movimento.",
       note: "Prima visita accurata, spiegazioni chiare e un piano di lavoro concreto."
     },
-    trust: ["Percorsi su misura", "Fisioterapia e osteopatia", "Sport, postura, riabilitazione", "Trattamenti a domicilio"],
+    trust: ["Percorsi su misura", "Fisioterapia e osteopatia", "Riabilitazione e prevenzione", "Trattamenti a domicilio"],
     conditions: {
       eyebrow: "Patologie e disturbi",
       title: "Dal dolore quotidiano al recupero sportivo: individuiamo cosa limita il movimento.",
@@ -334,10 +334,32 @@ export const siteContent = {
     },
     about: {
       eyebrow: "Chi sono",
-      title: "Un approccio clinico, umano e orientato a risultati sostenibili.",
-      body:
-        "MOVERE nasce per offrire una presa in carico attenta: ascoltare, valutare, trattare e accompagnare il recupero con metodo. L'obiettivo è aiutarti a ridurre il dolore, recuperare funzione e capire come proteggere il movimento nel tempo.",
-      points: ["Valutazione individuale e obiettivi condivisi", "Piano terapeutico comprensibile, senza passaggi inutili", "Progressione verso autonomia, prevenzione e mantenimento"]
+      title: "Jamal Alzaidy",
+      subtitle: "Fisioterapista e Osteopata",
+      intro: "Un approccio clinico e umano per recuperare autonomia, movimento e qualità di vita.",
+      credentials: ["BSc Fisioterapia", "MSc Osteopatia", "Master Neuro-Riabilitazione"],
+      body: [
+        "Sono Jamal, fisioterapista ed osteopata. Accompagno ogni persona nel recupero della funzionalità e del benessere con trattamenti personalizzati, basati sulle più recenti evidenze scientifiche e su un ascolto attento delle esigenze individuali.",
+        "Ho lavorato sia in ambito ospedaliero sia ambulatoriale, seguendo pazienti con bisogni diversi e spesso complessi: riabilitazione post-operatoria e sportiva, disturbi neurologici, patologie dell'età geriatrica e percorsi di recupero funzionale.",
+        "Ogni percorso viene costruito con obiettivi condivisi, integrando terapia manuale, manipolazione fasciale, esercizio terapeutico e collaborazione con altri professionisti sanitari quando serve."
+      ],
+      points: [
+        {
+          label: "Esperienza",
+          title: "Ospedale e ambulatorio",
+          text: "Percorsi per casi semplici e complessi, dal dolore quotidiano alla riabilitazione post-operatoria."
+        },
+        {
+          label: "Specializzazione",
+          title: "Neuro-riabilitazione",
+          text: "Valutazione e trattamento dei disturbi neurologici con programmi progressivi e personalizzati."
+        },
+        {
+          label: "Accoglienza",
+          title: "Cinque lingue",
+          text: "Assistenza in italiano, inglese, francese, spagnolo e tedesco per una comunicazione chiara e inclusiva."
+        }
+      ]
     },
     locations: {
       eyebrow: "Sedi",
@@ -345,11 +367,6 @@ export const siteContent = {
       text:
         "Le visite sono organizzate su appuntamento, con il tempo necessario per valutare e trattare con attenzione. In caso di difficoltà a spostarsi, è possibile valutare un percorso a domicilio.",
       cards: ["Studio privato su appuntamento", "Percorsi per sportivi, lavoro e vita quotidiana", "Disponibilità per trattamenti a domicilio"]
-    },
-    blog: {
-      eyebrow: "Blog",
-      title: "Guide pratiche per capire meglio dolore, postura e recupero.",
-      text: "Uno spazio editoriale pensato per spiegare concetti utili in modo semplice: quando muoversi, come gestire il carico e quali abitudini aiutano a mantenere i risultati."
     },
     appointment: {
       eyebrow: "Prenota",
@@ -374,11 +391,11 @@ export const siteContent = {
         "physiotherapy, osteopathy, sports rehabilitation, back pain, neck pain, sciatica, manual therapy, geriatric physiotherapy"
     },
     nav: {
+      home: "Home",
       conditions: "Conditions",
       treatments: "Treatments",
       about: "About",
-      locations: "Locations",
-      blog: "Blog"
+      locations: "Locations"
     },
     cta: {
       appointment: "Book now",
@@ -394,7 +411,7 @@ export const siteContent = {
         "Assessment, treatment and rehabilitation for pain, posture, sports injuries and functional recovery. A pathway built around your body, your goals and better movement quality.",
       note: "A careful first assessment, clear explanations and a concrete treatment plan."
     },
-    trust: ["Tailored care pathways", "Physiotherapy and Osteopathy", "Sport, posture, rehabilitation", "Home treatments available"],
+    trust: ["Tailored care pathways", "Physiotherapy and Osteopathy", "Rehabilitation and prevention", "Home treatments available"],
     conditions: {
       eyebrow: "Conditions",
       title: "From daily pain to sports recovery: we identify what limits your movement.",
@@ -411,10 +428,32 @@ export const siteContent = {
     },
     about: {
       eyebrow: "About",
-      title: "A clinical, human approach focused on sustainable results.",
-      body:
-        "MOVERE was created to offer attentive care: listen, assess, treat and guide recovery with method. The goal is to reduce pain, restore function and help you understand how to protect your movement over time.",
-      points: ["Individual assessment and shared goals", "A clear treatment plan without unnecessary steps", "Progression toward autonomy, prevention and maintenance"]
+      title: "Jamal Alzaidy",
+      subtitle: "Physiotherapist and Osteopath",
+      intro: "A clinical, human approach to restore autonomy, movement and quality of life.",
+      credentials: ["BSc Physiotherapy", "MSc Osteopathy", "Master's in Neuro-Rehabilitation"],
+      body: [
+        "I am Jamal, a physiotherapist and osteopath. I support each person in recovering function and well-being through personalized treatments based on current scientific evidence and careful attention to individual needs.",
+        "My experience spans hospital and outpatient settings, working with varied and often complex needs: post-operative and sports rehabilitation, neurological disorders, geriatric conditions and functional recovery pathways.",
+        "Each pathway is built around shared goals, combining manual therapy, fascial manipulation, therapeutic exercise and collaboration with other healthcare professionals when needed."
+      ],
+      points: [
+        {
+          label: "Experience",
+          title: "Hospital and outpatient care",
+          text: "Support for simple and complex cases, from daily pain to post-operative rehabilitation."
+        },
+        {
+          label: "Specialization",
+          title: "Neuro-rehabilitation",
+          text: "Assessment and treatment of neurological disorders with progressive, personalized programs."
+        },
+        {
+          label: "Communication",
+          title: "Five languages",
+          text: "Care in Italian, English, French, Spanish and German for clear, inclusive communication."
+        }
+      ]
     },
     locations: {
       eyebrow: "Locations",
@@ -422,11 +461,6 @@ export const siteContent = {
       text:
         "Visits are organized by appointment, with enough time to assess and treat carefully. When travel is difficult, a home-treatment pathway can be discussed.",
       cards: ["Private appointments", "Care for sport, work and everyday life", "Home treatment availability"]
-    },
-    blog: {
-      eyebrow: "Blog",
-      title: "Practical guides to better understand pain, posture and recovery.",
-      text: "An editorial space designed to explain useful concepts simply: when to move, how to manage load and which habits help maintain results."
     },
     appointment: {
       eyebrow: "Appointment",
@@ -451,11 +485,11 @@ export const siteContent = {
         "fisioterapia, osteopatia, rehabilitacion deportiva, dolor de espalda, cervicalgia, ciatica, terapia manual, fisioterapia geriatrica"
     },
     nav: {
+      home: "Inicio",
       conditions: "Patologias y molestias",
       treatments: "Tratamientos",
       about: "Quien soy",
-      locations: "Sedes",
-      blog: "Blog"
+      locations: "Sedes"
     },
     cta: {
       appointment: "Reservar ahora",
@@ -465,13 +499,13 @@ export const siteContent = {
     hero: {
       eyebrow: "MOVERE",
       title: "MOVERE",
-      tagline: "el movimiento es vida",
+      tagline: "movimiento es vida",
       service: "Fisioterapia y Osteopatia",
       text:
         "Evaluación, tratamiento y rehabilitación para dolor, postura, lesiones deportivas y recuperación funcional. Un proceso construido alrededor de tu cuerpo, tus objetivos y la calidad del movimiento.",
       note: "Primera valoración precisa, explicaciones claras y un plan de trabajo concreto."
     },
-    trust: ["Procesos a medida", "Fisioterapia y Osteopatia", "Deporte, postura, rehabilitacion", "Tratamientos a domicilio"],
+    trust: ["Procesos a medida", "Fisioterapia y Osteopatia", "Rehabilitacion y prevencion", "Tratamientos a domicilio"],
     conditions: {
       eyebrow: "Patologias y molestias",
       title: "Del dolor diario a la recuperación deportiva: identificamos qué limita tu movimiento.",
@@ -488,10 +522,32 @@ export const siteContent = {
     },
     about: {
       eyebrow: "Quien soy",
-      title: "Un enfoque clínico, humano y orientado a resultados sostenibles.",
-      body:
-        "MOVERE nace para ofrecer una atención cuidadosa: escuchar, valorar, tratar y acompañar la recuperación con método. El objetivo es reducir el dolor, recuperar función y ayudarte a proteger el movimiento a largo plazo.",
-      points: ["Valoración individual y objetivos compartidos", "Plan terapéutico claro, sin pasos innecesarios", "Progresión hacia autonomía, prevención y mantenimiento"]
+      title: "Jamal Alzaidy",
+      subtitle: "Fisioterapeuta y Osteópata",
+      intro: "Un enfoque clínico y humano para recuperar autonomía, movimiento y calidad de vida.",
+      credentials: ["BSc Fisioterapia", "MSc Osteopatía", "Máster en Neuro-Rehabilitación"],
+      body: [
+        "Soy Jamal, fisioterapeuta y osteópata. Acompaño a cada persona en la recuperación de la funcionalidad y el bienestar con tratamientos personalizados, basados en la evidencia científica actual y en una escucha atenta de sus necesidades.",
+        "Mi experiencia incluye el ámbito hospitalario y ambulatorio, con pacientes y necesidades a menudo complejas: rehabilitación postoperatoria y deportiva, trastornos neurológicos, patologías geriátricas y recuperación funcional.",
+        "Cada proceso se construye con objetivos compartidos, integrando terapia manual, manipulación fascial, ejercicio terapéutico y colaboración con otros profesionales sanitarios cuando es necesario."
+      ],
+      points: [
+        {
+          label: "Experiencia",
+          title: "Hospital y consulta",
+          text: "Procesos para casos simples y complejos, desde el dolor cotidiano hasta la rehabilitación postoperatoria."
+        },
+        {
+          label: "Especialización",
+          title: "Neuro-rehabilitación",
+          text: "Valoración y tratamiento de trastornos neurológicos con programas progresivos y personalizados."
+        },
+        {
+          label: "Comunicación",
+          title: "Cinco idiomas",
+          text: "Atención en italiano, inglés, francés, español y alemán para una comunicación clara e inclusiva."
+        }
+      ]
     },
     locations: {
       eyebrow: "Sedes",
@@ -499,11 +555,6 @@ export const siteContent = {
       text:
         "Las visitas se organizan con cita previa, con el tiempo necesario para valorar y tratar con atención. Si desplazarse es difícil, se puede estudiar un proceso a domicilio.",
       cards: ["Consulta privada con cita", "Procesos para deporte, trabajo y vida diaria", "Disponibilidad de tratamientos a domicilio"]
-    },
-    blog: {
-      eyebrow: "Blog",
-      title: "Guías prácticas para entender mejor dolor, postura y recuperación.",
-      text: "Un espacio editorial para explicar conceptos útiles de forma simple: cuándo moverse, cómo gestionar la carga y qué hábitos ayudan a mantener resultados."
     },
     appointment: {
       eyebrow: "Cita",
@@ -528,11 +579,11 @@ export const siteContent = {
         "physiotherapie, osteopathie, reeducation sportive, mal de dos, cervicalgie, sciatique, therapie manuelle, physiotherapie geriatrique"
     },
     nav: {
+      home: "Accueil",
       conditions: "Pathologies et troubles",
       treatments: "Traitements",
       about: "A propos",
-      locations: "Lieux",
-      blog: "Blog"
+      locations: "Lieux"
     },
     cta: {
       appointment: "Réserver",
@@ -542,13 +593,13 @@ export const siteContent = {
     hero: {
       eyebrow: "MOVERE",
       title: "MOVERE",
-      tagline: "le mouvement, c'est la vie",
+      tagline: "le mouvement est la vie",
       service: "Physiotherapie et Osteopathie",
       text:
         "Évaluation, traitement et rééducation pour douleur, posture, blessures sportives et récupération fonctionnelle. Un parcours construit autour de votre corps, vos objectifs et la qualité du mouvement.",
       note: "Première évaluation attentive, explications claires et plan de travail concret."
     },
-    trust: ["Parcours sur mesure", "Physiotherapie et Osteopathie", "Sport, posture, reeducation", "Soins a domicile disponibles"],
+    trust: ["Parcours sur mesure", "Physiotherapie et Osteopathie", "Reeducation et prevention", "Soins a domicile disponibles"],
     conditions: {
       eyebrow: "Pathologies et troubles",
       title: "De la douleur quotidienne au retour au sport: nous identifions ce qui limite le mouvement.",
@@ -565,10 +616,32 @@ export const siteContent = {
     },
     about: {
       eyebrow: "A propos",
-      title: "Une approche clinique, humaine et orientée vers des résultats durables.",
-      body:
-        "MOVERE a été créée pour offrir une prise en charge attentive: écouter, évaluer, traiter et accompagner la récupération avec méthode. L'objectif est de réduire la douleur, restaurer la fonction et protéger le mouvement dans le temps.",
-      points: ["Évaluation individuelle et objectifs partagés", "Plan thérapeutique clair, sans étapes inutiles", "Progression vers autonomie, prévention et maintien"]
+      title: "Jamal Alzaidy",
+      subtitle: "Physiothérapeute et Ostéopathe",
+      intro: "Une approche clinique et humaine pour retrouver autonomie, mouvement et qualité de vie.",
+      credentials: ["BSc Physiothérapie", "MSc Ostéopathie", "Master en Neuro-Rééducation"],
+      body: [
+        "Je suis Jamal, physiothérapeute et ostéopathe. J'accompagne chaque personne dans la récupération de la fonctionnalité et du bien-être grâce à des traitements personnalisés, fondés sur les données scientifiques actuelles et une écoute attentive des besoins individuels.",
+        "Mon expérience couvre le milieu hospitalier et le cabinet, avec des patients aux besoins variés et parfois complexes: rééducation post-opératoire et sportive, troubles neurologiques, pathologies gériatriques et récupération fonctionnelle.",
+        "Chaque parcours est construit autour d'objectifs partagés, en associant thérapie manuelle, manipulation fasciale, exercice thérapeutique et collaboration avec d'autres professionnels de santé lorsque cela est utile."
+      ],
+      points: [
+        {
+          label: "Expérience",
+          title: "Hôpital et cabinet",
+          text: "Parcours pour situations simples ou complexes, de la douleur quotidienne à la rééducation post-opératoire."
+        },
+        {
+          label: "Spécialisation",
+          title: "Neuro-rééducation",
+          text: "Évaluation et traitement des troubles neurologiques avec des programmes progressifs et personnalisés."
+        },
+        {
+          label: "Communication",
+          title: "Cinq langues",
+          text: "Accompagnement en italien, anglais, français, espagnol et allemand pour une communication claire et inclusive."
+        }
+      ]
     },
     locations: {
       eyebrow: "Lieux",
@@ -576,11 +649,6 @@ export const siteContent = {
       text:
         "Les consultations sont organisées sur rendez-vous, avec le temps nécessaire pour évaluer et traiter avec attention. Si se déplacer est difficile, un parcours à domicile peut être envisagé.",
       cards: ["Cabinet privé sur rendez-vous", "Parcours pour sport, travail et quotidien", "Disponibilité pour soins à domicile"]
-    },
-    blog: {
-      eyebrow: "Blog",
-      title: "Guides pratiques pour mieux comprendre douleur, posture et récupération.",
-      text: "Un espace éditorial pour expliquer simplement des notions utiles: quand bouger, comment gérer la charge et quelles habitudes aident à maintenir les résultats."
     },
     appointment: {
       eyebrow: "Rendez-vous",

@@ -15,7 +15,7 @@ export const BRAND = {
     phoneDisplay: "+39 300 000 0000",
     phoneHref: "+393000000000",
     whatsappNumber: "393000000000",
-    email: "info@movereclinic.it",
+    email: "info@movereclinic.com",
     city: "Italia",
     country: "IT"
   },
