@@ -1,0 +1,190 @@
+---
+interface Props {
+  kind:
+    | "conditionBack"
+    | "conditionNeck"
+    | "conditionJoints"
+    | "conditionHand"
+    | "conditionSport"
+    | "conditionNeuro"
+    | "conditionBalance"
+    | "manualTherapy"
+    | "therapeuticExercise"
+    | "osteopathy"
+    | "postoperativeRehab"
+    | "sportsRehab"
+    | "neurologicalRehab"
+    | "geriatricPhysio"
+    | "prevention"
+    | "homeTreatment";
+  alt: string;
+}
+
+const { kind, alt } = Astro.props;
+---
+
+<svg class="editorial-illustration-art" viewBox="0 0 320 200" role="img" aria-label={alt} xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="200" fill="#F4F2EE" />
+  <path d="M0 171h320" stroke="#D7DED9" stroke-width="2" />
+  {kind === "conditionBack" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M132 34c-18 10-27 25-31 48l-12 52c-2 10 3 17 13 18l27 4 8 14h46l8-14 27-4c10-1 15-8 13-18l-12-52c-4-23-13-38-31-48" fill="#FBFAF7" stroke="#62736C" stroke-width="3" />
+      <path d="M160 45v109" stroke="#62736C" stroke-width="3" />
+      <path d="M151 55h18m-19 12h20m-21 12h22m-22 12h22m-22 12h22m-21 12h20m-18 12h16" stroke="#91A49A" stroke-width="4" />
+      <path d="M145 91c7-7 23-7 30 0v25c-8 9-22 9-30 0Z" fill="#E9BFB5" stroke="#B83B34" stroke-width="2.5" />
+      <path d="M79 156h162m-82-108c-18 4-29 12-38 25m76-25c18 4 29 12 38 25" stroke="#C3CEC7" stroke-width="2" />
+    </g>
+  )}
+  {kind === "conditionNeck" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M119 47c17-15 45-19 66-8 19 10 28 30 25 48-2 13-10 21-22 28l2 27 39 16H91l39-16 2-25c-21-6-33-18-33-36 0-14 7-26 20-34Z" fill="#FBFAF7" stroke="#62736C" stroke-width="3" />
+      <path d="M156 70c-9 10-11 22-6 34m8-30c-8 10-9 20-4 30m8-25c-7 8-8 16-4 24" stroke="#91A49A" stroke-width="4" />
+      <path d="M111 89c11 2 18 8 22 18m76-18c-11 2-18 8-22 18" stroke="#62736C" stroke-width="3" />
+      <circle cx="205" cy="105" r="13" fill="#E9BFB5" stroke="#B83B34" stroke-width="2.5" />
+      <path d="M195 95c7-6 16-5 21 1m-95 60h78" stroke="#C3CEC7" stroke-width="2" />
+    </g>
+  )}
+  {kind === "conditionJoints" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m118 38 9 48 22 25-14 43m62-116-12 48-21 25 14 43" stroke="#62736C" stroke-width="11" />
+      <path d="M127 86c6-8 16-8 22 0m35 0c6-8 16-8 22 0" stroke="#62736C" stroke-width="8" />
+      <circle cx="156" cy="113" r="12" fill="#E9BFB5" stroke="#B83B34" stroke-width="3" />
+      <circle cx="169" cy="113" r="12" fill="#E9BFB5" stroke="#B83B34" stroke-width="3" />
+      <path d="M109 49c-14 15-20 29-20 43m122-43c14 15 20 29 20 43" stroke="#A8B7AE" stroke-width="2" stroke-dasharray="4 5" />
+      <path d="M85 160h150m-57-45h20" stroke="#C3CEC7" stroke-width="2" />
+    </g>
+  )}
+  {kind === "conditionHand" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M117 154c-9-7-14-18-14-31V91c0-7 10-8 12-1l5 19V59c0-8 12-8 12 0v43-53c0-8 12-8 12 0v52-46c0-8 12-8 12 0v48-33c0-8 12-8 12 0v40l13-15c6-7 16 0 11 7l-23 39c-5 9-12 14-25 14h-14c-11 0-19-1-25-5Z" fill="#FBFAF7" stroke="#62736C" stroke-width="3" />
+      <path d="m126 121 31-4m-29-12 29-4m-28-12 28-4m-27-12 24-4" stroke="#9DAFA5" stroke-width="2" />
+      <circle cx="153" cy="123" r="11" fill="#E9BFB5" stroke="#B83B34" stroke-width="2.5" />
+      <path d="M206 65c12 12 18 26 18 42m-18 42c12-12 18-26 18-42" stroke="#B83B34" stroke-width="2" stroke-dasharray="4 5" />
+    </g>
+  )}
+  {kind === "conditionSport" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="165" cy="43" r="11" fill="#FBFAF7" stroke="#62736C" stroke-width="3" />
+      <path d="m160 56-18 34 23 16 27-20m-50 4-28 6-13-18m41 28-22 29 20 11 28-25m24-35 22 16" stroke="#62736C" stroke-width="7" />
+      <circle cx="165" cy="106" r="10" fill="#E9BFB5" stroke="#B83B34" stroke-width="3" />
+      <path d="m156 102 18 9m-79-61-16 9m20 5-16 9m27 1-14 8" stroke="#A8B7AE" stroke-width="2.5" />
+      <path d="M91 158h150m-18-7 18 7-18 7" stroke="#B83B34" stroke-width="2" />
+    </g>
+  )}
+  {kind === "conditionNeuro" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="132" cy="42" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="3" />
+      <path d="m131 53 8 37-20 24m20-24 24 14m-24-14-19 36m19-36 15 39" stroke="#62736C" stroke-width="6" />
+      <path d="M190 72v69m-12-57 12-12 12 12m-12 38-12 12 12 12 12-12" stroke="#B83B34" stroke-width="2.5" />
+      <path d="M218 74v65m-9-55 9-10 9 10m-9 35-9 10 9 10 9-10" stroke="#9DAFA5" stroke-width="2" />
+      <path d="M84 157h153" stroke="#C3CEC7" stroke-width="2" />
+    </g>
+  )}
+  {kind === "conditionBalance" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="153" cy="39" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="3" />
+      <path d="m153 50 2 36-17 24m17-24 20 21m-20-21-20 40m20-40 24 37" stroke="#62736C" stroke-width="6" />
+      <path d="M79 63v87m0-72h25m-25 43h25" stroke="#9DAFA5" stroke-width="3" />
+      <path d="M125 158h72m-62-3-10 3 10 3m51-6 10 3-10 3" stroke="#B83B34" stroke-width="2.5" />
+      <path d="M220 76v75m-9-63 9-11 9 11" stroke="#C3CEC7" stroke-width="2" stroke-dasharray="4 4" />
+    </g>
+  )}
+  {kind === "manualTherapy" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M44 139h232v14H44z" fill="#E5ECE8" stroke="#62736C" stroke-width="2.5" />
+      <path d="M58 153v15m204-15v15" stroke="#62736C" stroke-width="3" />
+      <circle cx="91" cy="111" r="12" fill="#E9BFB5" stroke="#62736C" stroke-width="2.5" />
+      <path d="M104 116c22-10 56-9 84 0l31 12h-99c-11 0-17-4-16-12Z" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <circle cx="193" cy="56" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m187 68-13 21 14 18m-14-18-19 9m32 9 19 18m-5-49 19 15" stroke="#62736C" stroke-width="5" />
+      <path d="M163 102c7-8 15-8 22 0m-17-7 5 7 5-7" stroke="#B83B34" stroke-width="2.5" />
+      <path d="M174 109v13" stroke="#B83B34" stroke-width="2" stroke-dasharray="3 4" />
+    </g>
+  )}
+  {kind === "therapeuticExercise" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M44 153h232" stroke="#62736C" stroke-width="3" />
+      <circle cx="124" cy="49" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m124 60 4 38m-2-28-27 12m27-12 25 20m-23 8-17 34m19-34 23 34" stroke="#62736C" stroke-width="5" />
+      <circle cx="220" cy="61" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m218 71-9 29m7-19-20 6m20-6 16 12m-23 7 18 22m-18-22-13 23" stroke="#7D8D85" stroke-width="5" />
+      <path d="M98 82c30 36 75 43 117 7" stroke="#B83B34" stroke-width="2.5" stroke-dasharray="5 5" />
+      <path d="M92 82h8m-7-5v10m121 1h8m-7-5v10" stroke="#B83B34" stroke-width="2.5" />
+      <path d="M109 153v-8m28 8v-8m66 8v-8m26 8v-8" stroke="#62736C" stroke-width="2" />
+    </g>
+  )}
+  {kind === "osteopathy" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M72 148h176m16-55v55m-183-55v55" stroke="#62736C" stroke-width="3" />
+      <circle cx="145" cy="65" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m144 77 4 31m0-21-23 11m23-11 22 8m-22 13-20 21m20-21 20 20" stroke="#62736C" stroke-width="5" />
+      <path d="M123 103h-16v15h17m43-13 15 2 8 11-11 6-15-7" fill="#E9BFB5" stroke="#62736C" stroke-width="2.5" />
+      <circle cx="111" cy="111" r="4" fill="#B83B34" />
+      <path d="M100 100c-7 7-7 17 0 24m90-25c8 8 8 18 0 26" stroke="#B83B34" stroke-width="2" stroke-dasharray="3 4" />
+      <path d="M117 149v18m54-18v18" stroke="#62736C" stroke-width="3" />
+    </g>
+  )}
+  {kind === "postoperativeRehab" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M70 53v104m0-93h41m-41 34h41m-41 34h41m-41-91 41 17m-41 17 41 17m-41 17 41 17" stroke="#9DAFA5" stroke-width="2" />
+      <circle cx="158" cy="45" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m157 57-6 37-21 19m21-19 24 16m-24-16-14 36m14-36 24 36" stroke="#62736C" stroke-width="5" />
+      <circle cx="221" cy="56" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m219 67-2 31-17 17m17-17 15 16m-14-16-9 31m9-31 14 31m-27-52-15-1m25 2 13-11" stroke="#7D8D85" stroke-width="5" />
+      <path d="m189 81-10 70m10-70 13 70m-17-57h13" stroke="#B83B34" stroke-width="2.5" />
+    </g>
+  )}
+  {kind === "sportsRehab" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M45 151h230m-28 0v-22h28v22" stroke="#62736C" stroke-width="3" />
+      <circle cx="131" cy="44" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m130 56-9 32 25 15 25-16m-50 1-21 10-14-18m35 23-19 34 19 12 23-30m27-31 17 20" stroke="#62736C" stroke-width="5.5" />
+      <circle cx="146" cy="103" r="9" fill="#E9BFB5" stroke="#B83B34" stroke-width="2.5" />
+      <circle cx="226" cy="59" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m224 70-6 30-16 14m16-14 16 12m-16-12-8 29m8-29 15 29m-24-51-17-2m28 2 13-9" stroke="#7D8D85" stroke-width="4.5" />
+      <path d="M82 67c8-9 18-12 29-10m96-20c12 0 22 5 29 14" stroke="#B83B34" stroke-width="2" stroke-dasharray="4 5" />
+    </g>
+  )}
+  {kind === "neurologicalRehab" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M57 50v112m0-103h201m-201 44h201m-201 44h201m-201-88 201 44m-201 0 201 44" stroke="#A8B7AE" stroke-width="2" />
+      <circle cx="144" cy="42" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m143 53 4 34-20 20m20-20 22 16m-22-16-15 34m15-34 23 31" stroke="#62736C" stroke-width="5" />
+      <circle cx="220" cy="52" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m219 63-4 33-14 18m14-18 17 15m-17-15-9 32m9-32 17 31m-31-51-12-1m28 2 12-9" stroke="#7D8D85" stroke-width="4.5" />
+      <path d="M174 131h25m-7-7 7 7-7 7" stroke="#B83B34" stroke-width="2.5" />
+    </g>
+  )}
+  {kind === "geriatricPhysio" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M202 84v67m-33 0h66m-59-37h50m-49 0v37m48-37v37" stroke="#9DAFA5" stroke-width="3" />
+      <circle cx="130" cy="48" r="10" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m129 60 10 34-17 22m17-22 27 12m-27-12-17 25m17-25 19 32" stroke="#62736C" stroke-width="5" />
+      <circle cx="222" cy="60" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m220 71-8 31-10 11m10-11 18 9m-18-9-9 28m9-28 15 28m-24-48-13-4m25 6 12-9" stroke="#7D8D85" stroke-width="4.5" />
+      <path d="M153 108c13 2 22 1 32-1" stroke="#B83B34" stroke-width="2.5" stroke-dasharray="4 4" />
+    </g>
+  )}
+  {kind === "prevention" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="64" y="31" width="118" height="119" rx="3" fill="#FBFAF7" stroke="#9DAFA5" stroke-width="2" />
+      <path d="M123 42v90" stroke="#B83B34" stroke-width="2" stroke-dasharray="4 5" />
+      <circle cx="133" cy="47" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m132 58-3 31-17 19m17-19 19 18m-19-18-13 29m13-29 18 29" stroke="#62736C" stroke-width="5" />
+      <circle cx="229" cy="54" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m228 65-7 29-15 16m15-16 17 15m-17-15-9 29m9-29 15 29m-27-48-15-3m26 4 14-9" stroke="#7D8D85" stroke-width="4.5" />
+      <path d="M191 117h28m-8-7 8 7-8 7" stroke="#B83B34" stroke-width="2" />
+    </g>
+  )}
+  {kind === "homeTreatment" && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M56 91 99 54l43 37v64H56Zm12 64v-43h28v43m18-42h18v24h-18Z" fill="#FBFAF7" stroke="#9DAFA5" stroke-width="2.5" />
+      <path d="M198 121h75m-67 0v31m59-31v31m-58-17h57" stroke="#9DAFA5" stroke-width="3" />
+      <circle cx="167" cy="47" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m166 58-3 29-17 17m17-17 19 14m-19-14-14 27m14-27 17 28" stroke="#62736C" stroke-width="5" />
+      <circle cx="228" cy="66" r="9" fill="#FBFAF7" stroke="#62736C" stroke-width="2.5" />
+      <path d="m227 77-3 22-14 12m14-12 16 12m-16-12-8 22m8-22 15 21m-29-35-13 5m29-7 12-8" stroke="#7D8D85" stroke-width="4.5" />
+      <path d="M153 110h18" stroke="#B83B34" stroke-width="2.5" stroke-dasharray="3 4" />
+    </g>
+  )}
+</svg>

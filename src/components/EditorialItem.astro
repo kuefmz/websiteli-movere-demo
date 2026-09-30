@@ -1,0 +1,38 @@
+---
+import EditorialIllustration from "./EditorialIllustration.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  illustration:
+    | "conditionBack"
+    | "conditionNeck"
+    | "conditionJoints"
+    | "conditionHand"
+    | "conditionSport"
+    | "conditionNeuro"
+    | "conditionBalance"
+    | "manualTherapy"
+    | "therapeuticExercise"
+    | "osteopathy"
+    | "postoperativeRehab"
+    | "sportsRehab"
+    | "neurologicalRehab"
+    | "geriatricPhysio"
+    | "prevention"
+    | "homeTreatment";
+  imageAlt: string;
+}
+
+const { title, description, illustration, imageAlt } = Astro.props;
+---
+
+<article class="editorial-item">
+  <div class="editorial-illustration">
+    <EditorialIllustration kind={illustration} alt={imageAlt} />
+  </div>
+  <div class="editorial-item-copy">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+</article>

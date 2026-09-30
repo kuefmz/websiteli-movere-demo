@@ -10,7 +10,7 @@ export const BRAND = {
   },
   logo: "/assets/movere-clinic-logo.png",
   favicon: "/assets/movere-logo.png",
-  heroImage: "/assets/movere-hero.png",
+  heroImage: "/assets/jamal-rehabilitation-squat.png",
   contact: {
     phoneDisplay: "+39 300 000 0000",
     phoneHref: "+393000000000",

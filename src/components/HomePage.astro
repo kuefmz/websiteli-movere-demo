@@ -2,6 +2,7 @@
 import { BRAND } from "../config/brand";
 import { languageMeta, languages, siteContent, type Language } from "../content/siteContent";
 import { withBase } from "../utils/paths";
+import EditorialItem from "./EditorialItem.astro";
 
 interface Props {
   lang: Language;
@@ -9,7 +10,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const content = siteContent[lang];
-const aboutPhoto = "/assets/jamal-alzaidy.jpeg";
+const conditionIllustrations = ["conditionBack", "conditionNeck", "conditionJoints", "conditionHand", "conditionSport", "conditionNeuro", "conditionBalance"] as const;
+const treatmentIllustrations = ["manualTherapy", "therapeuticExercise", "osteopathy", "postoperativeRehab", "sportsRehab", "neurologicalRehab", "geriatricPhysio", "prevention", "homeTreatment"] as const;
+const jamalPortrait = withBase("/assets/jamal-alzaidy.jpeg");
 const origin = Astro.site?.toString().replace(/\/$/, "") ?? "https://kuefmz.github.io";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const currentPath = languageMeta[lang].path;
@@ -114,9 +117,7 @@ const jsonLd = {
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <img class="hero-image" src={withBase(BRAND.heroImage)} alt="Physiotherapy treatment room prepared for a personalized movement assessment" width="1600" height="1000" />
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class:list={["section-wrap", "hero-grid", !showHeroTrustPanel && "hero-grid-single"]}>
+        <div class="section-wrap hero-grid">
           <div class="hero-copy">
             <h1 id="hero-title">{content.hero.title}</h1>
             <p class="tagline">{content.hero.tagline}</p>
@@ -130,6 +131,17 @@ const jsonLd = {
               <a class="button button-ghost" href="#treatments">{content.cta.treatments}</a>
             </div>
             <p class="hero-note">{content.hero.note}</p>
+          </div>
+          <div class="hero-photo-frame">
+            <img
+              class="hero-image"
+              src={withBase(BRAND.heroImage)}
+              alt={content.imageAlt.heroRehabilitation}
+              width="1152"
+              height="768"
+              loading="eager"
+              decoding="async"
+            />
           </div>
           {showHeroTrustPanel && (
             <div class="hero-panel" aria-label="Clinic highlights">
@@ -157,15 +169,14 @@ const jsonLd = {
           </div>
           <p>{content.conditions.intro}</p>
         </div>
-        <div class="section-wrap card-grid conditions-grid">
+        <div class="section-wrap editorial-grid conditions-grid">
           {content.conditions.items.map((item, index) => (
-            <article class="clinic-card">
-              <span class="card-index">{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
+            <EditorialItem
+              title={item.title}
+              description={item.text}
+              illustration={conditionIllustrations[index]}
+              imageAlt={content.imageAlt[conditionIllustrations[index]]}
+            />
           ))}
         </div>
       </section>
@@ -178,14 +189,14 @@ const jsonLd = {
           </div>
           <p>{content.treatments.intro}</p>
         </div>
-        <div class="section-wrap treatment-list">
-          {content.treatments.items.map((item) => (
-            <article>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
+        <div class="section-wrap editorial-grid treatment-grid">
+          {content.treatments.items.map((item, index) => (
+            <EditorialItem
+              title={item.title}
+              description={item.text}
+              illustration={treatmentIllustrations[index]}
+              imageAlt={content.imageAlt[treatmentIllustrations[index]]}
+            />
           ))}
         </div>
         <div class="section-wrap inline-cta">
@@ -208,17 +219,15 @@ const jsonLd = {
 
           <div class="about-main">
             <aside class="about-profile" aria-label={content.about.subtitle}>
-              <div class="about-photo-frame">
-                <img
-                  class="about-photo"
-                  src={withBase(aboutPhoto)}
-                  alt={`${content.about.title}, ${content.about.subtitle}`}
-                  width="910"
-                  height="802"
-                  loading="eager"
-                  decoding="async"
-                />
-              </div>
+              <img
+                class="about-photo"
+                src={jamalPortrait}
+                alt={content.imageAlt.jamalPortrait}
+                width="910"
+                height="802"
+                loading="lazy"
+                decoding="async"
+              />
               <div>
                 <h3>{content.about.title}</h3>
                 <p>{content.about.subtitle}</p>
