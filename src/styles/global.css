@@ -25,7 +25,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 98px;
+  scroll-padding-top: 123px;
   background: var(--color-paper);
 }
 
@@ -349,23 +349,19 @@ button {
   color: var(--color-white);
 }
 
-.hero-image,
+.hero-image {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 64%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 8%;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-image {
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero-overlay {
-  background:
-    linear-gradient(90deg, rgb(8 10 9 / 0.88), rgb(8 10 9 / 0.58) 48%, rgb(8 10 9 / 0.22)),
-    linear-gradient(0deg, rgb(8 10 9 / 0.72), transparent 46%);
+  background: linear-gradient(90deg, var(--color-black) 36%, rgb(8 10 9 / 0.9) 41%, rgb(8 10 9 / 0.58) 49%, transparent 60%);
 }
 
 .hero-grid {
@@ -380,7 +376,7 @@ button {
 }
 
 .hero-grid-single {
-  grid-template-columns: minmax(0, 720px);
+  grid-template-columns: minmax(0, min(46%, 32rem));
 }
 
 .eyebrow {
@@ -415,7 +411,7 @@ h2 {
 
 h1 {
   max-width: 11ch;
-  font-size: clamp(4rem, 8.5vw, 7.8rem);
+  font-size: clamp(3.5rem, 6.5vw, 6.3rem);
 }
 
 h2 {
@@ -533,7 +529,7 @@ h3 {
 }
 
 .section-intro p:last-child,
-.split-heading > p,
+.split-heading > p:last-child,
 .appointment-section p,
 .site-footer p {
   margin: 0;
@@ -596,12 +592,23 @@ h3 {
   background: var(--color-white);
 }
 
+.treatment-photo {
+  height: clamp(16rem, 36vw, 30rem);
+  background: var(--color-paper) var(--treatment-image) center / cover no-repeat;
+}
+
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) and (not (pointer: coarse)) {
+  .treatment-photo {
+    background-attachment: fixed;
+  }
+}
+
 .treatments-section {
   background: var(--color-black);
   color: var(--color-white);
 }
 
-.treatments-section .split-heading > p {
+.treatments-section .split-heading > p:last-child {
   color: rgb(255 255 255 / 0.7);
 }
 
@@ -611,6 +618,25 @@ h3 {
   grid-template-columns: minmax(0, 0.88fr) minmax(280px, 0.72fr);
   gap: clamp(1.8rem, 6vw, 5rem);
   align-items: start;
+}
+
+.split-heading {
+  grid-template-areas:
+    "eyebrow ."
+    "title description";
+  row-gap: 0;
+}
+
+.split-heading > .eyebrow {
+  grid-area: eyebrow;
+}
+
+.split-heading > h2 {
+  grid-area: title;
+}
+
+.split-heading > p:last-child {
+  grid-area: description;
 }
 
 .treatment-list {
@@ -665,11 +691,14 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.62fr);
   gap: clamp(1.2rem, 4vw, 3rem);
-  align-items: end;
+  align-items: start;
 }
 
 .about-heading h2 {
-  max-width: 12ch;
+  max-width: none;
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: inherit;
 }
 
 .about-heading > p {
@@ -677,7 +706,7 @@ h3 {
   border-left: 3px solid var(--color-accent);
   padding-left: 1.1rem;
   color: var(--color-ink);
-  font-size: clamp(1.08rem, 1.5vw, 1.28rem);
+  font-size: 1rem;
   font-weight: 760;
   line-height: 1.55;
 }
@@ -780,13 +809,12 @@ h3 {
 .about-story p {
   margin: 0;
   color: var(--color-muted);
+  font-weight: 400;
 }
 
-.about-story p:first-child {
+.about-story strong {
   color: var(--color-ink);
-  font-size: clamp(1rem, 1.38vw, 1.14rem);
-  font-weight: 760;
-  line-height: 1.55;
+  font-weight: 650;
 }
 
 .about-story p + p {
@@ -829,22 +857,94 @@ h3 {
   line-height: 1.55;
 }
 
+.location-highlights,
 .location-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 0.9rem;
-  margin-top: 2rem;
+  margin-block: 2rem 0;
 }
 
+.location-highlights {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+}
+
+.location-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.location-highlights li,
 .location-cards article {
   border-radius: var(--radius);
   border: 1px solid var(--color-warm-line);
   background:
     linear-gradient(180deg, rgb(255 255 255 / 0.92), rgb(247 238 238 / 0.72)),
     linear-gradient(90deg, var(--color-accent) 0 3px, transparent 3px);
+  box-shadow: 0 14px 42px rgb(8 10 9 / 0.055);
+}
+
+.location-highlights li {
   padding: 1.25rem;
   font-weight: 820;
-  box-shadow: 0 14px 42px rgb(8 10 9 / 0.055);
+}
+
+.location-cards article {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.location-map {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 0;
+  background: var(--color-paper);
+}
+
+.location-map:focus-visible {
+  outline-offset: -4px;
+}
+
+.location-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.8rem 1rem;
+}
+
+.location-details address {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-style: normal;
+}
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  margin-top: auto;
+}
+
+.location-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 32px;
+  font-size: 0.88rem;
+  text-underline-offset: 0.2em;
+}
+
+.location-directions {
+  font-weight: 700;
+}
+
+.location-actions svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex-shrink: 0;
+  fill: currentColor;
 }
 
 .appointment-section {
@@ -941,9 +1041,23 @@ h3 {
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1220px) {
   .nav-shell {
     grid-template-columns: auto auto;
+  }
+
+  .nav-state {
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    clip-path: inset(50%);
+  }
+
+  .nav-state:focus-visible + .nav-toggle {
+    outline: 3px solid var(--color-accent-soft);
+    outline-offset: 4px;
   }
 
   .nav-toggle {
@@ -1007,6 +1121,37 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-image {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: 24rem;
+    object-position: center 30%;
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-grid {
+    padding-block: clamp(1.6rem, 5vw, 3.5rem);
+  }
+
+  .split-heading {
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "description";
+  }
+
+  .split-heading > p:last-child {
+    margin-top: 1.25rem;
+  }
+
   .about-profile {
     min-height: 0;
   }
@@ -1019,7 +1164,7 @@ h3 {
   .card-grid,
   .treatment-list,
   .about-points,
-  .location-cards,
+  .location-highlights,
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1027,7 +1172,7 @@ h3 {
 
 @media (max-width: 620px) {
   html {
-    scroll-padding-top: 86px;
+    scroll-padding-top: 103px;
   }
 
   .nav-shell {
@@ -1036,14 +1181,6 @@ h3 {
 
   .brand-lockup {
     width: 152px;
-  }
-
-  .hero {
-    min-height: 560px;
-  }
-
-  .hero-grid {
-    padding-block-start: 0.75rem;
   }
 
   h1 {
@@ -1070,6 +1207,7 @@ h3 {
   .card-grid,
   .treatment-list,
   .about-points,
+  .location-highlights,
   .location-cards,
   .footer-grid {
     grid-template-columns: 1fr;
