@@ -12,7 +12,8 @@ export const BRAND = {
   },
   logo: "/assets/movere-clinic-logo.png",
   favicon: "/assets/movere-logo.png",
-  heroImage: "/assets/movere-hero.png",
+  heroImage: "/assets/jamal-rehabilitation-squat.webp",
+  treatmentImage: "/assets/jamal-manual-treatment.webp",
   contact: {
     phoneDisplay,
     whatsappNumber: phoneDisplay.replace(/\D/g, ""),

@@ -312,6 +312,7 @@ export const siteContent = {
       title: "MOVERE",
       tagline: "movimento è vita",
       service: "Fisioterapia e Osteopatia",
+      imageAlt: "Jamal assiste una paziente durante uno squat in palestra",
       text:
         "Valutazione, trattamento e riabilitazione per dolore, postura, infortuni sportivi e recupero funzionale. Un percorso costruito sul tuo corpo, sui tuoi obiettivi e sulla qualità del movimento.",
       note: "Prima visita accurata, spiegazioni chiare e un piano di lavoro concreto."
@@ -365,6 +366,7 @@ export const siteContent = {
       title: "Studio su appuntamento e trattamenti a domicilio.",
       text:
         "Le visite sono organizzate su appuntamento, con il tempo necessario per valutare e trattare con attenzione. In caso di difficoltà a spostarsi, è possibile valutare un percorso a domicilio.",
+      highlights: ["Appuntamenti in studio", "Percorsi per sportivi, lavoro e vita quotidiana", "Appuntamenti a domicilio"],
       medicalOffice: "Studio medico",
       mapTitle: "Mappa interattiva di Google",
       openMap: "Apri in Google Maps",
@@ -409,6 +411,7 @@ export const siteContent = {
       title: "MOVERE",
       tagline: "movement is life",
       service: "Physiotherapy and Osteopathy",
+      imageAlt: "Jamal supports a patient during a squat in the gym",
       text:
         "Assessment, treatment and rehabilitation for pain, posture, sports injuries and functional recovery. A pathway built around your body, your goals and better movement quality.",
       note: "A careful first assessment, clear explanations and a concrete treatment plan."
@@ -462,6 +465,7 @@ export const siteContent = {
       title: "Appointments and home treatments.",
       text:
         "Visits are organised by appointment, with enough time to assess and treat carefully. When travel is difficult, a home-treatment pathway can be discussed.",
+      highlights: ["In-clinic appointments", "Care for sport, work and everyday life", "Home appointments"],
       medicalOffice: "Medical practice",
       mapTitle: "Interactive Google Map",
       openMap: "Open in Google Maps",
@@ -506,6 +510,7 @@ export const siteContent = {
       title: "MOVERE",
       tagline: "movimiento es vida",
       service: "Fisioterapia y Osteopatia",
+      imageAlt: "Jamal ayuda a una paciente a hacer una sentadilla en el gimnasio",
       text:
         "Evaluación, tratamiento y rehabilitación para dolor, postura, lesiones deportivas y recuperación funcional. Un proceso construido alrededor de tu cuerpo, tus objetivos y la calidad del movimiento.",
       note: "Primera valoración precisa, explicaciones claras y un plan de trabajo concreto."
@@ -559,6 +564,7 @@ export const siteContent = {
       title: "Consulta y tratamientos a domicilio.",
       text:
         "Las visitas se organizan con cita previa, con el tiempo necesario para valorar y tratar con atención. Si desplazarse es difícil, se puede estudiar un proceso a domicilio.",
+      highlights: ["Citas en consulta", "Procesos para deporte, trabajo y vida diaria", "Citas a domicilio"],
       medicalOffice: "Consulta médica",
       mapTitle: "Mapa interactivo de Google",
       openMap: "Abrir en Google Maps",
@@ -603,6 +609,7 @@ export const siteContent = {
       title: "MOVERE",
       tagline: "le mouvement est la vie",
       service: "Physiotherapie et Osteopathie",
+      imageAlt: "Jamal accompagne une patiente lors d’un squat en salle de sport",
       text:
         "Évaluation, traitement et rééducation pour douleur, posture, blessures sportives et récupération fonctionnelle. Un parcours construit autour de votre corps, vos objectifs et la qualité du mouvement.",
       note: "Première évaluation attentive, explications claires et plan de travail concret."
@@ -656,6 +663,7 @@ export const siteContent = {
       title: "Cabinet et soins à domicile.",
       text:
         "Les consultations sont organisées sur rendez-vous, avec le temps nécessaire pour évaluer et traiter avec attention. Si se déplacer est difficile, un parcours à domicile peut être envisagé.",
+      highlights: ["Rendez-vous au cabinet", "Parcours pour sport, travail et quotidien", "Rendez-vous à domicile"],
       medicalOffice: "Cabinet médical",
       mapTitle: "Carte Google interactive",
       openMap: "Ouvrir dans Google Maps",

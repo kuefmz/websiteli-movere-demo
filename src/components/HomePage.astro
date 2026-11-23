@@ -14,6 +14,8 @@ const absoluteUrl = (path: string) => new URL(withBase(path), Astro.site).href;
 const canonical = absoluteUrl(languageMeta[lang].path);
 const whatsappHref = `https://wa.me/${BRAND.contact.whatsappNumber}`;
 const appointmentHref = `${whatsappHref}?text=${encodeURIComponent(content.appointment.message)}`;
+const whatsappLabel = `WhatsApp ${BRAND.contact.phoneDisplay}`;
+const phoneIconPath = "M6.6 10.8c1.5 3 3.7 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.2 21.5 2.5 13.8 2.5 4.3 2.5 3.6 3.1 3 3.8 3h3.5c.7 0 1.3.6 1.3 1.3 0 1.1.2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.2 2.2Z";
 // Toggle these if you want to compare the four points inside the hero vs. below it.
 const showHeroTrustPanel = false;
 const showTrustStrip = true;
@@ -105,8 +107,8 @@ const jsonLd = {
               ))}
             </div>
           </details>
-          <a class="phone-pill" href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${BRAND.contact.phoneDisplay}`}>
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.7 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.2 21.5 2.5 13.8 2.5 4.3 2.5 3.6 3.1 3 3.8 3h3.5c.7 0 1.3.6 1.3 1.3 0 1.1.2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.2 2.2Z"/></svg>
+          <a class="phone-pill" href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label={whatsappLabel}>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d={phoneIconPath} /></svg>
             {BRAND.contact.phoneDisplay}
           </a>
           <a class="button button-light nav-cta" href={appointmentHref} target="_blank" rel="noopener noreferrer">
@@ -119,7 +121,7 @@ const jsonLd = {
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <img class="hero-image" src={withBase(BRAND.heroImage)} alt="Physiotherapy treatment room prepared for a personalised movement assessment" width="1600" height="1000" />
+        <img class="hero-image" src={withBase(BRAND.heroImage)} alt={content.hero.imageAlt} width="1536" height="1024" />
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class:list={["section-wrap", "hero-grid", !showHeroTrustPanel && "hero-grid-single"]}>
           <div class="hero-copy">
@@ -175,12 +177,12 @@ const jsonLd = {
         </div>
       </section>
 
+      <div class="treatment-photo" style={`--treatment-image: url("${withBase(BRAND.treatmentImage)}")`} aria-hidden="true"></div>
+
       <section class="section treatments-section" id="treatments" aria-labelledby="treatments-title">
         <div class="section-wrap split-heading">
-          <div>
-            <p class="eyebrow">{content.treatments.eyebrow}</p>
-            <h2 id="treatments-title">{content.treatments.title}</h2>
-          </div>
+          <p class="eyebrow">{content.treatments.eyebrow}</p>
+          <h2 id="treatments-title">{content.treatments.title}</h2>
           <p>{content.treatments.intro}</p>
         </div>
         <div class="section-wrap treatment-list">
@@ -204,10 +206,7 @@ const jsonLd = {
       <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="section-wrap about-layout">
           <div class="about-heading">
-            <div>
-              <p class="eyebrow">{content.about.eyebrow}</p>
-              <h2 id="about-title">{content.about.title}</h2>
-            </div>
+            <h2 class="eyebrow" id="about-title">{content.about.eyebrow}</h2>
             <p>{content.about.intro}</p>
           </div>
 
@@ -254,12 +253,13 @@ const jsonLd = {
 
       <section class="section locations-section" id="locations" aria-labelledby="locations-title">
         <div class="section-wrap split-heading">
-          <div>
-            <p class="eyebrow">{content.locations.eyebrow}</p>
-            <h2 id="locations-title">{content.locations.title}</h2>
-          </div>
+          <p class="eyebrow">{content.locations.eyebrow}</p>
+          <h2 id="locations-title">{content.locations.title}</h2>
           <p>{content.locations.text}</p>
         </div>
+        <ul class="section-wrap location-highlights" role="list">
+          {content.locations.highlights.map((highlight) => <li>{highlight}</li>)}
+        </ul>
         <div class="section-wrap location-cards">
           {BRAND.locations.map((location) => {
             const title = location.name ?? content.locations.medicalOffice;
@@ -310,7 +310,10 @@ const jsonLd = {
             <h2 id="appointment-title">{content.appointment.title}</h2>
             <p>{content.appointment.text}</p>
             <div class="appointment-actions">
-              <a class="button button-light" href={whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp {BRAND.contact.phoneDisplay}</a>
+              <a class="button button-light" href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label={whatsappLabel}>
+                <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24"><path d={phoneIconPath} /></svg>
+                {BRAND.contact.phoneDisplay}
+              </a>
               <a class="button button-ghost-light" href={`mailto:${BRAND.contact.email}`}>{BRAND.contact.email}</a>
             </div>
           </div>
@@ -329,7 +332,7 @@ const jsonLd = {
         </div>
         <div>
           <h2>{content.footer.contact}</h2>
-          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${BRAND.contact.phoneDisplay}`}>{BRAND.contact.phoneDisplay}</a>
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label={whatsappLabel}>{BRAND.contact.phoneDisplay}</a>
           <a href={`mailto:${BRAND.contact.email}`}>{BRAND.contact.email}</a>
         </div>
         <div>
