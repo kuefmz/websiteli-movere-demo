@@ -36,7 +36,7 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={languageMeta[lang].tag}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -47,7 +47,7 @@ const jsonLd = {
     <meta name="theme-color" content={BRAND.colors.black} />
     <link rel="canonical" href={canonical} />
     {languages.map((code) => (
-      <link rel="alternate" hreflang={code} href={absoluteUrl(languageMeta[code].path)} />
+      <link rel="alternate" hreflang={languageMeta[code].tag} href={absoluteUrl(languageMeta[code].path)} />
     ))}
     <link rel="alternate" hreflang="x-default" href={absoluteUrl(languageMeta.it.path)} />
     <meta property="og:type" content="website" />
@@ -77,31 +77,31 @@ const jsonLd = {
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+    <a class="skip-link" href="#main">{content.accessibility.skip}</a>
     <header class="site-header">
-      <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="brand-lockup" href={languageMeta[lang].path === "/" ? withBase("/") : withBase(languageMeta[lang].path)} aria-label={`${BRAND.name} home`}>
-          <img src={withBase(BRAND.logo)} alt="" width="1742" height="903" decoding="async" />
+      <nav class="nav-shell" aria-label={content.accessibility.navigation}>
+        <a class="brand-lockup" href={withBase(languageMeta[lang].path)} aria-label={`${BRAND.name} – ${content.nav.home}`}>
+          <img src={withBase(BRAND.logo)} alt="" width="1536" height="1024" decoding="async" />
         </a>
-        <input class="nav-state" id="nav-state" type="checkbox" aria-hidden="true" />
-        <label class="nav-toggle" for="nav-state" aria-label="Open navigation">
+        <input class="nav-state" id="nav-state" type="checkbox" aria-label={content.accessibility.menu} aria-controls="nav-links nav-actions" />
+        <label class="nav-toggle" for="nav-state" aria-hidden="true">
           <span></span><span></span><span></span>
         </label>
-        <div class="nav-panel">
+        <div class="nav-panel" id="nav-links">
           <a href="#top">{content.nav.home}</a>
           <a href="#conditions">{content.nav.conditions}</a>
           <a href="#treatments">{content.nav.treatments}</a>
           <a href="#about">{content.nav.about}</a>
           <a href="#locations">{content.nav.locations}</a>
         </div>
-        <div class="nav-actions">
+        <div class="nav-actions" id="nav-actions">
           <details class="language-menu">
             <summary aria-label={content.footer.language}>
               <span>{languageMeta[lang].flag}</span>{lang.toUpperCase()}
             </summary>
             <div class="language-list">
               {languages.map((code) => (
-                <a class:list={[code === lang && "is-active"]} href={withBase(languageMeta[code].path)} lang={code} aria-current={code === lang ? "page" : undefined}>
+                <a class:list={[code === lang && "is-active"]} href={withBase(languageMeta[code].path)} lang={languageMeta[code].tag} aria-label={languageMeta[code].label} aria-current={code === lang ? "page" : undefined}>
                   <span>{languageMeta[code].flag}</span>{code.toUpperCase()}
                 </a>
               ))}
@@ -119,7 +119,7 @@ const jsonLd = {
       </nav>
     </header>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <img class="hero-image" src={withBase(BRAND.heroImage)} alt={content.hero.imageAlt} width="1536" height="1024" />
         <div class="hero-overlay" aria-hidden="true"></div>
@@ -139,7 +139,7 @@ const jsonLd = {
             <p class="hero-note">{content.hero.note}</p>
           </div>
           {showHeroTrustPanel && (
-            <div class="hero-panel" aria-label="Clinic highlights">
+            <div class="hero-panel" aria-label={content.accessibility.benefits}>
               {content.trust.map((item) => <span>{item}</span>)}
             </div>
           )}
@@ -147,7 +147,7 @@ const jsonLd = {
       </section>
 
       {showTrustStrip && (
-        <section class="trust-strip" aria-label="Benefits">
+        <section class="trust-strip" aria-label={content.accessibility.benefits}>
           <div class="section-wrap trust-grid">
             {content.trust.map((item) => (
               <div>{item}</div>
@@ -227,7 +227,7 @@ const jsonLd = {
                 <h3>{content.about.title}</h3>
                 <p>{content.about.subtitle}</p>
               </div>
-              <div class="about-credentials" aria-label="Qualifications">
+              <div class="about-credentials" aria-label={content.accessibility.qualifications}>
                 {content.about.credentials.map((credential) => <span>{credential}</span>)}
               </div>
             </aside>
@@ -263,7 +263,8 @@ const jsonLd = {
         <div class="section-wrap location-cards">
           {BRAND.locations.map((location) => {
             const title = location.name ?? content.locations.medicalOffice;
-            const destination = encodeURIComponent(location.mapTarget ?? location.address);
+            const destination = encodeURIComponent(location.mapTargets?.directions ?? location.address);
+            const mapSearch = encodeURIComponent(location.mapTargets?.search ?? location.address);
 
             return (
               <article>
@@ -290,7 +291,7 @@ const jsonLd = {
                       {content.locations.directions}
                     </a>
                     <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${destination}`}
+                      href={`https://www.google.com/maps/search/?api=1&query=${mapSearch}`}
                       aria-label={`${content.locations.openMap} – ${location.address}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -327,7 +328,7 @@ const jsonLd = {
     <footer class="site-footer">
       <div class="section-wrap footer-grid">
         <div>
-          <img src={withBase(BRAND.logo)} alt={BRAND.name} width="1742" height="903" loading="lazy" />
+          <img src={withBase(BRAND.logo)} alt={BRAND.name} width="1536" height="1024" loading="lazy" />
           <p>{content.hero.service}</p>
         </div>
         <div>
@@ -338,7 +339,7 @@ const jsonLd = {
         <div>
           <h2>{content.footer.language}</h2>
           <div class="footer-languages">
-            {languages.map((code) => <a href={withBase(languageMeta[code].path)}>{languageMeta[code].flag} {code.toUpperCase()}</a>)}
+            {languages.map((code) => <a href={withBase(languageMeta[code].path)} lang={languageMeta[code].tag} aria-label={languageMeta[code].label}>{languageMeta[code].flag} {code.toUpperCase()}</a>)}
           </div>
         </div>
         <div>
@@ -356,5 +357,14 @@ const jsonLd = {
         <a href={BRAND.websiteliUrl} target="_blank" rel="noopener noreferrer">websiteli.ch</a>
       </div>
     </footer>
+    <script>
+      const navState = document.querySelector<HTMLInputElement>("#nav-state");
+
+      document.querySelector("#nav-links")?.addEventListener("click", (event) => {
+        if (navState && event.target instanceof HTMLAnchorElement) {
+          navState.checked = false;
+        }
+      });
+    </script>
   </body>
 </html>

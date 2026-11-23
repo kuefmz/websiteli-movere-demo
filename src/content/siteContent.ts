@@ -2,11 +2,11 @@ export type Language = "it" | "en" | "es" | "fr";
 
 export const languages: Language[] = ["it", "en", "es", "fr"];
 
-export const languageMeta: Record<Language, { label: string; flag: string; locale: string; path: string }> = {
-  it: { label: "Italiano", flag: "🇮🇹", locale: "it_IT", path: "/" },
-  en: { label: "English", flag: "🇬🇧", locale: "en_GB", path: "/en/" },
-  es: { label: "Español", flag: "🇪🇸", locale: "es_ES", path: "/es/" },
-  fr: { label: "Français", flag: "🇫🇷", locale: "fr_FR", path: "/fr/" }
+export const languageMeta: Record<Language, { label: string; flag: string; tag: string; locale: string; path: string }> = {
+  it: { label: "Italiano", flag: "🇮🇹", tag: "it", locale: "it_IT", path: "/" },
+  en: { label: "English", flag: "🇬🇧", tag: "en-GB", locale: "en_GB", path: "/en/" },
+  es: { label: "Español", flag: "🇪🇸", tag: "es", locale: "es_ES", path: "/es/" },
+  fr: { label: "Français", flag: "🇫🇷", tag: "fr", locale: "fr_FR", path: "/fr/" }
 };
 
 const commonConditions = {
@@ -66,8 +66,8 @@ const commonConditions = {
       text: "Rehabilitation focused on coordination, balance, walking and autonomy in everyday life."
     },
     {
-      title: "Balance, instability and fall-risk concerns",
-      text: "Work on safety, strength and control so movement feels more confident at home and outside."
+      title: "Balance problems, instability and risk of falls",
+      text: "Build strength and improve control to move with more confidence at home and outdoors."
     }
   ],
   es: [
@@ -198,14 +198,14 @@ const commonTreatments = {
     },
     {
       title: "Geriatric physiotherapy",
-      text: "Care focused on mobility, strength, walking safety and fall prevention for older adults."
+      text: "Care focused on mobility, strength, walking safely and preventing falls in older adults."
     },
     {
       title: "Prevention and maintenance",
       text: "Sessions and programmes to maintain results, improve movement habits and reduce the risk of recurring symptoms."
     },
     {
-      title: "Home treatments",
+      title: "Home visits",
       text: "Physiotherapy support when travel is difficult, with practical goals for recovery, autonomy and quality of life."
     }
   ],
@@ -303,6 +303,13 @@ export const siteContent = {
       about: "Chi sono",
       locations: "Sedi"
     },
+    accessibility: {
+      skip: "Vai al contenuto principale",
+      navigation: "Navigazione principale",
+      menu: "Menu di navigazione",
+      benefits: "Vantaggi",
+      qualifications: "Qualifiche"
+    },
     cta: {
       appointment: "Prenota ora",
       treatments: "Vedi trattamenti"
@@ -363,10 +370,9 @@ export const siteContent = {
     },
     locations: {
       eyebrow: "Sedi",
-      title: "Studio su appuntamento e trattamenti a domicilio.",
-      text:
-        "Le visite sono organizzate su appuntamento, con il tempo necessario per valutare e trattare con attenzione. In caso di difficoltà a spostarsi, è possibile valutare un percorso a domicilio.",
-      highlights: ["Appuntamenti in studio", "Percorsi per sportivi, lavoro e vita quotidiana", "Appuntamenti a domicilio"],
+      title: "Trattamenti in studio e a domicilio",
+      text: "Puoi prenotare un trattamento in una delle due sedi di Firenze oppure concordare una visita a domicilio.",
+      highlights: ["Trattamenti in studio", "Percorsi per sportivi, lavoro e vita quotidiana", "Visite a domicilio"],
       medicalOffice: "Studio medico",
       mapTitle: "Mappa interattiva di Google",
       openMap: "Apri in Google Maps",
@@ -391,7 +397,7 @@ export const siteContent = {
     seo: {
       title: "MOVERE | Physiotherapy and Osteopathy",
       description:
-        "MOVERE provides personalised physiotherapy, osteopathy and rehabilitation for pain, posture, sport, neurological recovery and home treatments.",
+        "MOVERE provides personalised physiotherapy, osteopathy and rehabilitation for pain, posture, sport and neurological recovery, with home visits available.",
       keywords:
         "physiotherapy, osteopathy, sports rehabilitation, back pain, neck pain, sciatica, manual therapy, geriatric physiotherapy"
     },
@@ -401,6 +407,13 @@ export const siteContent = {
       treatments: "Treatments",
       about: "About",
       locations: "Locations"
+    },
+    accessibility: {
+      skip: "Skip to main content",
+      navigation: "Main navigation",
+      menu: "Navigation menu",
+      benefits: "Benefits",
+      qualifications: "Qualifications"
     },
     cta: {
       appointment: "Book now",
@@ -413,10 +426,10 @@ export const siteContent = {
       service: "Physiotherapy and Osteopathy",
       imageAlt: "Jamal supports a patient during a squat in the gym",
       text:
-        "Assessment, treatment and rehabilitation for pain, posture, sports injuries and functional recovery. A pathway built around your body, your goals and better movement quality.",
-      note: "A careful first assessment, clear explanations and a concrete treatment plan."
+        "Assessment, treatment and rehabilitation for pain, posture, sports injuries and functional recovery. Care tailored to your needs, goals and the way you move.",
+      note: "A thorough initial assessment, clear explanations and a practical treatment plan."
     },
-    trust: ["Tailored care pathways", "Physiotherapy and Osteopathy", "Rehabilitation and prevention", "Home treatments available"],
+    trust: ["Tailored care pathways", "Physiotherapy and Osteopathy", "Rehabilitation and prevention", "Home visits available"],
     conditions: {
       eyebrow: "Conditions",
       title: "From daily pain to sports recovery: we identify what limits your movement.",
@@ -462,10 +475,9 @@ export const siteContent = {
     },
     locations: {
       eyebrow: "Locations",
-      title: "Appointments and home treatments.",
-      text:
-        "Visits are organised by appointment, with enough time to assess and treat carefully. When travel is difficult, a home-treatment pathway can be discussed.",
-      highlights: ["In-clinic appointments", "Care for sport, work and everyday life", "Home appointments"],
+      title: "In-Studio Treatments & Home Visits",
+      text: "Book an appointment at either of the two Florence studios or arrange a home visit.",
+      highlights: ["In-studio treatments", "Care for sport, work and everyday life", "Home visits"],
       medicalOffice: "Medical practice",
       mapTitle: "Interactive Google Map",
       openMap: "Open in Google Maps",
@@ -488,18 +500,25 @@ export const siteContent = {
   },
   es: {
     seo: {
-      title: "MOVERE | Fisioterapia y Osteopatia",
+      title: "MOVERE | Fisioterapia y Osteopatía",
       description:
-        "MOVERE ofrece fisioterapia, osteopatia y rehabilitacion personalizada para dolor, postura, deporte, neurologia y tratamientos a domicilio.",
+        "MOVERE ofrece fisioterapia, osteopatía y rehabilitación personalizada para el dolor, la postura, el deporte, la recuperación neurológica y la atención a domicilio.",
       keywords:
-        "fisioterapia, osteopatia, rehabilitacion deportiva, dolor de espalda, cervicalgia, ciatica, terapia manual, fisioterapia geriatrica"
+        "fisioterapia, osteopatía, rehabilitación deportiva, dolor de espalda, cervicalgia, ciática, terapia manual, fisioterapia geriátrica"
     },
     nav: {
       home: "Inicio",
-      conditions: "Patologias y molestias",
+      conditions: "Patologías y molestias",
       treatments: "Tratamientos",
-      about: "Quien soy",
+      about: "Quién soy",
       locations: "Sedes"
+    },
+    accessibility: {
+      skip: "Saltar al contenido principal",
+      navigation: "Navegación principal",
+      menu: "Menú de navegación",
+      benefits: "Ventajas",
+      qualifications: "Titulaciones"
     },
     cta: {
       appointment: "Reservar ahora",
@@ -509,15 +528,15 @@ export const siteContent = {
       eyebrow: "MOVERE",
       title: "MOVERE",
       tagline: "movimiento es vida",
-      service: "Fisioterapia y Osteopatia",
+      service: "Fisioterapia y Osteopatía",
       imageAlt: "Jamal ayuda a una paciente a hacer una sentadilla en el gimnasio",
       text:
         "Evaluación, tratamiento y rehabilitación para dolor, postura, lesiones deportivas y recuperación funcional. Un proceso construido alrededor de tu cuerpo, tus objetivos y la calidad del movimiento.",
       note: "Primera valoración precisa, explicaciones claras y un plan de trabajo concreto."
     },
-    trust: ["Procesos a medida", "Fisioterapia y Osteopatia", "Rehabilitacion y prevencion", "Tratamientos a domicilio"],
+    trust: ["Procesos a medida", "Fisioterapia y Osteopatía", "Rehabilitación y prevención", "Tratamientos a domicilio"],
     conditions: {
-      eyebrow: "Patologias y molestias",
+      eyebrow: "Patologías y molestias",
       title: "Del dolor diario a la recuperación deportiva: identificamos qué limita tu movimiento.",
       intro:
         "El punto de partida es entender la causa del problema, no solo dónde duele. La valoración considera síntomas, movilidad, fuerza, postura, hábitos y las exigencias de tu vida diaria.",
@@ -531,7 +550,7 @@ export const siteContent = {
       items: commonTreatments.es
     },
     about: {
-      eyebrow: "Quien soy",
+      eyebrow: "Quién soy",
       title: "Jamal Alzaidy",
       subtitle: "Fisioterapeuta y Osteópata",
       intro: "Un enfoque clínico y humano para recuperar autonomía, movimiento y calidad de vida.",
@@ -561,10 +580,9 @@ export const siteContent = {
     },
     locations: {
       eyebrow: "Sedes",
-      title: "Consulta y tratamientos a domicilio.",
-      text:
-        "Las visitas se organizan con cita previa, con el tiempo necesario para valorar y tratar con atención. Si desplazarse es difícil, se puede estudiar un proceso a domicilio.",
-      highlights: ["Citas en consulta", "Procesos para deporte, trabajo y vida diaria", "Citas a domicilio"],
+      title: "Tratamientos en consulta y visitas a domicilio",
+      text: "Puedes pedir cita en una de las dos consultas de Florencia o concertar una visita a domicilio.",
+      highlights: ["Tratamientos en consulta", "Atención para el deporte, el trabajo y la vida diaria", "Visitas a domicilio"],
       medicalOffice: "Consulta médica",
       mapTitle: "Mapa interactivo de Google",
       openMap: "Abrir en Google Maps",
@@ -587,18 +605,25 @@ export const siteContent = {
   },
   fr: {
     seo: {
-      title: "MOVERE | Physiotherapie et Osteopathie",
+      title: "MOVERE | Physiothérapie et Ostéopathie",
       description:
-        "MOVERE propose physiotherapie, osteopathie et reeducation personnalisee pour douleur, posture, sport, neurologie et soins a domicile.",
+        "MOVERE propose des soins personnalisés en physiothérapie, ostéopathie et rééducation pour la douleur, la posture, le sport et les troubles neurologiques, ainsi que des soins à domicile.",
       keywords:
-        "physiotherapie, osteopathie, reeducation sportive, mal de dos, cervicalgie, sciatique, therapie manuelle, physiotherapie geriatrique"
+        "physiothérapie, ostéopathie, rééducation sportive, mal de dos, cervicalgie, sciatique, thérapie manuelle, physiothérapie gériatrique"
     },
     nav: {
       home: "Accueil",
       conditions: "Pathologies et troubles",
       treatments: "Traitements",
-      about: "A propos",
+      about: "À propos",
       locations: "Lieux"
+    },
+    accessibility: {
+      skip: "Aller au contenu principal",
+      navigation: "Navigation principale",
+      menu: "Menu de navigation",
+      benefits: "Avantages",
+      qualifications: "Qualifications"
     },
     cta: {
       appointment: "Réserver",
@@ -608,16 +633,16 @@ export const siteContent = {
       eyebrow: "MOVERE",
       title: "MOVERE",
       tagline: "le mouvement est la vie",
-      service: "Physiotherapie et Osteopathie",
+      service: "Physiothérapie et Ostéopathie",
       imageAlt: "Jamal accompagne une patiente lors d’un squat en salle de sport",
       text:
         "Évaluation, traitement et rééducation pour douleur, posture, blessures sportives et récupération fonctionnelle. Un parcours construit autour de votre corps, vos objectifs et la qualité du mouvement.",
       note: "Première évaluation attentive, explications claires et plan de travail concret."
     },
-    trust: ["Parcours sur mesure", "Physiotherapie et Osteopathie", "Reeducation et prevention", "Soins a domicile disponibles"],
+    trust: ["Parcours sur mesure", "Physiothérapie et Ostéopathie", "Rééducation et prévention", "Soins à domicile disponibles"],
     conditions: {
       eyebrow: "Pathologies et troubles",
-      title: "De la douleur quotidienne au retour au sport: nous identifions ce qui limite le mouvement.",
+      title: "De la douleur quotidienne au retour au sport : nous identifions ce qui limite le mouvement.",
       intro:
         "Le point de départ consiste à comprendre la cause du problème, pas seulement l'endroit où la douleur apparaît. L'évaluation considère symptômes, mobilité, force, posture, habitudes et exigences du quotidien.",
       items: commonConditions.fr
@@ -626,11 +651,11 @@ export const siteContent = {
       eyebrow: "Traitements",
       title: "Traitements ciblés, progressifs et faciles à suivre.",
       intro:
-        "Chaque plan associe les outils les plus adaptés: thérapie manuelle, ostéopathie, exercice thérapeutique, éducation au mouvement et stratégies de prévention.",
+        "Chaque plan associe les outils les plus adaptés : thérapie manuelle, ostéopathie, exercice thérapeutique, éducation au mouvement et stratégies de prévention.",
       items: commonTreatments.fr
     },
     about: {
-      eyebrow: "A propos",
+      eyebrow: "À propos",
       title: "Jamal Alzaidy",
       subtitle: "Physiothérapeute et Ostéopathe",
       intro: "Une approche clinique et humaine pour retrouver autonomie, mouvement et qualité de vie.",
@@ -660,10 +685,9 @@ export const siteContent = {
     },
     locations: {
       eyebrow: "Lieux",
-      title: "Cabinet et soins à domicile.",
-      text:
-        "Les consultations sont organisées sur rendez-vous, avec le temps nécessaire pour évaluer et traiter avec attention. Si se déplacer est difficile, un parcours à domicile peut être envisagé.",
-      highlights: ["Rendez-vous au cabinet", "Parcours pour sport, travail et quotidien", "Rendez-vous à domicile"],
+      title: "Soins en cabinet et visites à domicile",
+      text: "Vous pouvez prendre rendez-vous dans l’un des deux cabinets à Florence ou organiser une visite à domicile.",
+      highlights: ["Soins en cabinet", "Soins pour le sport, le travail et le quotidien", "Visites à domicile"],
       medicalOffice: "Cabinet médical",
       mapTitle: "Carte Google interactive",
       openMap: "Ouvrir dans Google Maps",
@@ -674,12 +698,12 @@ export const siteContent = {
       eyebrow: "Rendez-vous",
       title: "Dites-nous ce que vous souhaitez améliorer et réservez une évaluation.",
       text:
-        "Écrivez ou appelez pour demander un rendez-vous. Nous vous aiderons à définir la suite: première évaluation, traitement, rééducation ou prévention.",
+        "Écrivez ou appelez pour demander un rendez-vous. Nous vous aiderons à définir la suite : première évaluation, traitement, rééducation ou prévention.",
       fields: ["Douleur, blessure ou objectif", "Depuis combien de temps", "Sport, travail ou besoins spécifiques"]
     },
     footer: {
       contact: "Contact",
-      legal: "Confidentialite et mentions legales",
+      legal: "Confidentialité et mentions légales",
       language: "Langue",
       navigation: "Navigation"
     }

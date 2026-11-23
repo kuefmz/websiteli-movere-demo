@@ -25,7 +25,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 98px;
+  scroll-padding-top: 123px;
   background: var(--color-paper);
 }
 
@@ -349,23 +349,19 @@ button {
   color: var(--color-white);
 }
 
-.hero-image,
+.hero-image {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 64%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 8%;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-image {
-  object-fit: cover;
-  object-position: 54% 8%;
-}
-
-.hero-overlay {
-  background:
-    linear-gradient(90deg, rgb(8 10 9 / 0.88), rgb(8 10 9 / 0.58) 48%, rgb(8 10 9 / 0.22)),
-    linear-gradient(0deg, rgb(8 10 9 / 0.72), transparent 46%);
+  background: linear-gradient(90deg, var(--color-black) 36%, rgb(8 10 9 / 0.9) 41%, rgb(8 10 9 / 0.58) 49%, transparent 60%);
 }
 
 .hero-grid {
@@ -380,7 +376,7 @@ button {
 }
 
 .hero-grid-single {
-  grid-template-columns: minmax(0, 720px);
+  grid-template-columns: minmax(0, min(46%, 32rem));
 }
 
 .eyebrow {
@@ -415,7 +411,7 @@ h2 {
 
 h1 {
   max-width: 11ch;
-  font-size: clamp(4rem, 8.5vw, 7.8rem);
+  font-size: clamp(3.5rem, 6.5vw, 6.3rem);
 }
 
 h2 {
@@ -1045,9 +1041,23 @@ h3 {
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1220px) {
   .nav-shell {
     grid-template-columns: auto auto;
+  }
+
+  .nav-state {
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    clip-path: inset(50%);
+  }
+
+  .nav-state:focus-visible + .nav-toggle {
+    outline: 3px solid var(--color-accent-soft);
+    outline-offset: 4px;
   }
 
   .nav-toggle {
@@ -1111,6 +1121,26 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-image {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: 24rem;
+    object-position: center 30%;
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-grid {
+    padding-block: clamp(1.6rem, 5vw, 3.5rem);
+  }
+
   .split-heading {
     grid-template-areas:
       "eyebrow"
@@ -1142,7 +1172,7 @@ h3 {
 
 @media (max-width: 620px) {
   html {
-    scroll-padding-top: 86px;
+    scroll-padding-top: 103px;
   }
 
   .nav-shell {
@@ -1151,14 +1181,6 @@ h3 {
 
   .brand-lockup {
     width: 152px;
-  }
-
-  .hero {
-    min-height: 560px;
-  }
-
-  .hero-grid {
-    padding-block-start: 0.75rem;
   }
 
   h1 {
