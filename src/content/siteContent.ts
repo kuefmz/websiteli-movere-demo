@@ -4,7 +4,7 @@ export const languages: Language[] = ["it", "en", "es", "fr"];
 
 export const languageMeta: Record<Language, { label: string; flag: string; locale: string; path: string }> = {
   it: { label: "Italiano", flag: "🇮🇹", locale: "it_IT", path: "/" },
-  en: { label: "English", flag: "🇬🇧", locale: "en_US", path: "/en/" },
+  en: { label: "English", flag: "🇬🇧", locale: "en_GB", path: "/en/" },
   es: { label: "Español", flag: "🇪🇸", locale: "es_ES", path: "/es/" },
   fr: { label: "Français", flag: "🇫🇷", locale: "fr_FR", path: "/fr/" }
 };
@@ -178,7 +178,7 @@ const commonTreatments = {
     },
     {
       title: "Therapeutic exercise",
-      text: "Progressive, personalized exercises to rebuild strength, control, balance and confidence in everyday movement."
+      text: "Progressive, personalised exercises to rebuild strength, control, balance and confidence in everyday movement."
     },
     {
       title: "Osteopathy",
@@ -186,11 +186,11 @@ const commonTreatments = {
     },
     {
       title: "Post-operative rehabilitation",
-      text: "Step-by-step recovery after orthopedic surgery, with clear goals for mobility, loading, strength and independence."
+      text: "Step-by-step recovery after orthopaedic surgery, with clear goals for mobility, loading, strength and independence."
     },
     {
       title: "Sports rehabilitation",
-      text: "Return-to-training and return-to-sport programs with measurable progressions, load management and recurrence prevention."
+      text: "Return-to-training and return-to-sport programmes with measurable progressions, load management and recurrence prevention."
     },
     {
       title: "Neurological rehabilitation",
@@ -202,7 +202,7 @@ const commonTreatments = {
     },
     {
       title: "Prevention and maintenance",
-      text: "Sessions and programs to maintain results, improve movement habits and reduce the risk of recurring symptoms."
+      text: "Sessions and programmes to maintain results, improve movement habits and reduce the risk of recurring symptoms."
     },
     {
       title: "Home treatments",
@@ -339,9 +339,9 @@ export const siteContent = {
       intro: "Un approccio clinico e umano per recuperare autonomia, movimento e qualità di vita.",
       credentials: ["BSc Fisioterapia", "MSc Osteopatia", "Master Neuro-Riabilitazione"],
       body: [
-        "Sono Jamal, fisioterapista ed osteopata. Accompagno ogni persona nel recupero della funzionalità e del benessere con trattamenti personalizzati, basati sulle più recenti evidenze scientifiche e su un ascolto attento delle esigenze individuali.",
-        "Ho lavorato sia in ambito ospedaliero sia ambulatoriale, seguendo pazienti con bisogni diversi e spesso complessi: riabilitazione post-operatoria e sportiva, disturbi neurologici, patologie dell'età geriatrica e percorsi di recupero funzionale.",
-        "Ogni percorso viene costruito con obiettivi condivisi, integrando terapia manuale, manipolazione fasciale, esercizio terapeutico e collaborazione con altri professionisti sanitari quando serve."
+        "Sono Jamal, fisioterapista ed osteopata. Accompagno ogni persona nel recupero della **funzionalità** e del **benessere** con trattamenti personalizzati, basati sulle più recenti evidenze scientifiche e su un ascolto attento delle **esigenze individuali**.",
+        "Ho lavorato sia in ambito ospedaliero sia ambulatoriale, seguendo pazienti con bisogni diversi e spesso complessi: riabilitazione post-operatoria e sportiva, disturbi neurologici, patologie dell'età geriatrica e percorsi di **recupero funzionale**.",
+        "Ogni percorso viene costruito con **obiettivi condivisi**, integrando terapia manuale, manipolazione fasciale, esercizio terapeutico e **collaborazione** con altri professionisti sanitari quando serve."
       ],
       points: [
         {
@@ -366,9 +366,13 @@ export const siteContent = {
       title: "Studio su appuntamento e trattamenti a domicilio.",
       text:
         "Le visite sono organizzate su appuntamento, con il tempo necessario per valutare e trattare con attenzione. In caso di difficoltà a spostarsi, è possibile valutare un percorso a domicilio.",
-      cards: ["Studio privato su appuntamento", "Percorsi per sportivi, lavoro e vita quotidiana", "Disponibilità per trattamenti a domicilio"]
+      medicalOffice: "Studio medico",
+      mapTitle: "Mappa interattiva di Google",
+      openMap: "Apri in Google Maps",
+      directions: "Indicazioni stradali"
     },
     appointment: {
+      message: "Buongiorno Jamal, vorrei prenotare un appuntamento presso MOVERE. Potresti indicarmi le tue disponibilità? Grazie!",
       eyebrow: "Prenota",
       title: "Raccontaci cosa vuoi migliorare e prenota una valutazione.",
       text:
@@ -386,7 +390,7 @@ export const siteContent = {
     seo: {
       title: "MOVERE | Physiotherapy and Osteopathy",
       description:
-        "MOVERE provides personalized physiotherapy, osteopathy and rehabilitation for pain, posture, sport, neurological recovery and home treatments.",
+        "MOVERE provides personalised physiotherapy, osteopathy and rehabilitation for pain, posture, sport, neurological recovery and home treatments.",
       keywords:
         "physiotherapy, osteopathy, sports rehabilitation, back pain, neck pain, sciatica, manual therapy, geriatric physiotherapy"
     },
@@ -433,9 +437,9 @@ export const siteContent = {
       intro: "A clinical, human approach to restore autonomy, movement and quality of life.",
       credentials: ["BSc Physiotherapy", "MSc Osteopathy", "Master's in Neuro-Rehabilitation"],
       body: [
-        "I am Jamal, a physiotherapist and osteopath. I support each person in recovering function and well-being through personalized treatments based on current scientific evidence and careful attention to individual needs.",
-        "My experience spans hospital and outpatient settings, working with varied and often complex needs: post-operative and sports rehabilitation, neurological disorders, geriatric conditions and functional recovery pathways.",
-        "Each pathway is built around shared goals, combining manual therapy, fascial manipulation, therapeutic exercise and collaboration with other healthcare professionals when needed."
+        "I am Jamal, a physiotherapist and osteopath. I help each person regain **function** and **wellbeing** through personalised treatments based on the latest scientific evidence and careful attention to **individual needs**.",
+        "I have worked in both hospital and outpatient settings, caring for patients with varied and often complex needs: post-operative and sports rehabilitation, neurological disorders, geriatric conditions and programmes for **functional recovery**.",
+        "Each course of treatment is built around **shared goals**, combining manual therapy, fascial manipulation, therapeutic exercise and **collaboration** with other healthcare professionals when needed."
       ],
       points: [
         {
@@ -444,9 +448,9 @@ export const siteContent = {
           text: "Support for simple and complex cases, from daily pain to post-operative rehabilitation."
         },
         {
-          label: "Specialization",
+          label: "Specialisation",
           title: "Neuro-rehabilitation",
-          text: "Assessment and treatment of neurological disorders with progressive, personalized programs."
+          text: "Assessment and treatment of neurological disorders with progressive, personalised programmes."
         },
         {
           label: "Communication",
@@ -459,10 +463,14 @@ export const siteContent = {
       eyebrow: "Locations",
       title: "Appointments and home treatments.",
       text:
-        "Visits are organized by appointment, with enough time to assess and treat carefully. When travel is difficult, a home-treatment pathway can be discussed.",
-      cards: ["Private appointments", "Care for sport, work and everyday life", "Home treatment availability"]
+        "Visits are organised by appointment, with enough time to assess and treat carefully. When travel is difficult, a home-treatment pathway can be discussed.",
+      medicalOffice: "Medical practice",
+      mapTitle: "Interactive Google Map",
+      openMap: "Open in Google Maps",
+      directions: "Get directions"
     },
     appointment: {
+      message: "Hello Jamal, I would like to book an appointment at MOVERE. Could you please let me know your availability? Thank you.",
       eyebrow: "Appointment",
       title: "Tell us what you want to improve and book an assessment.",
       text:
@@ -527,9 +535,9 @@ export const siteContent = {
       intro: "Un enfoque clínico y humano para recuperar autonomía, movimiento y calidad de vida.",
       credentials: ["BSc Fisioterapia", "MSc Osteopatía", "Máster en Neuro-Rehabilitación"],
       body: [
-        "Soy Jamal, fisioterapeuta y osteópata. Acompaño a cada persona en la recuperación de la funcionalidad y el bienestar con tratamientos personalizados, basados en la evidencia científica actual y en una escucha atenta de sus necesidades.",
-        "Mi experiencia incluye el ámbito hospitalario y ambulatorio, con pacientes y necesidades a menudo complejas: rehabilitación postoperatoria y deportiva, trastornos neurológicos, patologías geriátricas y recuperación funcional.",
-        "Cada proceso se construye con objetivos compartidos, integrando terapia manual, manipulación fascial, ejercicio terapéutico y colaboración con otros profesionales sanitarios cuando es necesario."
+        "Soy Jamal, fisioterapeuta y osteópata. Acompaño a cada persona en la recuperación de la **funcionalidad** y el **bienestar** con tratamientos personalizados, basados en la evidencia científica más reciente y en una escucha atenta de las **necesidades individuales**.",
+        "He trabajado tanto en el ámbito hospitalario como en el ambulatorio, atendiendo a pacientes con necesidades diversas y a menudo complejas: rehabilitación postoperatoria y deportiva, trastornos neurológicos, patologías geriátricas y programas de **recuperación funcional**.",
+        "Cada proceso se construye con **objetivos compartidos**, integrando terapia manual, manipulación fascial, ejercicio terapéutico y **colaboración** con otros profesionales sanitarios cuando es necesario."
       ],
       points: [
         {
@@ -554,9 +562,13 @@ export const siteContent = {
       title: "Consulta y tratamientos a domicilio.",
       text:
         "Las visitas se organizan con cita previa, con el tiempo necesario para valorar y tratar con atención. Si desplazarse es difícil, se puede estudiar un proceso a domicilio.",
-      cards: ["Consulta privada con cita", "Procesos para deporte, trabajo y vida diaria", "Disponibilidad de tratamientos a domicilio"]
+      medicalOffice: "Consulta médica",
+      mapTitle: "Mapa interactivo de Google",
+      openMap: "Abrir en Google Maps",
+      directions: "Cómo llegar"
     },
     appointment: {
+      message: "Buenos días, Jamal. Me gustaría reservar una cita en MOVERE. ¿Podrías decirme qué horarios tienes disponibles? ¡Gracias!",
       eyebrow: "Cita",
       title: "Cuéntanos qué quieres mejorar y reserva una valoración.",
       text:
@@ -621,9 +633,9 @@ export const siteContent = {
       intro: "Une approche clinique et humaine pour retrouver autonomie, mouvement et qualité de vie.",
       credentials: ["BSc Physiothérapie", "MSc Ostéopathie", "Master en Neuro-Rééducation"],
       body: [
-        "Je suis Jamal, physiothérapeute et ostéopathe. J'accompagne chaque personne dans la récupération de la fonctionnalité et du bien-être grâce à des traitements personnalisés, fondés sur les données scientifiques actuelles et une écoute attentive des besoins individuels.",
-        "Mon expérience couvre le milieu hospitalier et le cabinet, avec des patients aux besoins variés et parfois complexes: rééducation post-opératoire et sportive, troubles neurologiques, pathologies gériatriques et récupération fonctionnelle.",
-        "Chaque parcours est construit autour d'objectifs partagés, en associant thérapie manuelle, manipulation fasciale, exercice thérapeutique et collaboration avec d'autres professionnels de santé lorsque cela est utile."
+        "Je suis Jamal, physiothérapeute et ostéopathe. J'accompagne chaque personne dans le rétablissement de ses **capacités fonctionnelles** et de son **bien-être** grâce à des traitements personnalisés, fondés sur les données scientifiques les plus récentes et une écoute attentive des **besoins individuels**.",
+        "J'ai travaillé à la fois en milieu hospitalier et en consultation ambulatoire, auprès de patients aux besoins variés et souvent complexes : rééducation post-opératoire et sportive, troubles neurologiques, pathologies gériatriques et parcours de **récupération fonctionnelle**.",
+        "Chaque parcours se construit autour d'**objectifs partagés**, en associant thérapie manuelle, manipulation fasciale, exercice thérapeutique et **collaboration** avec d'autres professionnels de santé lorsque c'est nécessaire."
       ],
       points: [
         {
@@ -645,12 +657,16 @@ export const siteContent = {
     },
     locations: {
       eyebrow: "Lieux",
-      title: "Cabinet et soins a domicile.",
+      title: "Cabinet et soins à domicile.",
       text:
         "Les consultations sont organisées sur rendez-vous, avec le temps nécessaire pour évaluer et traiter avec attention. Si se déplacer est difficile, un parcours à domicile peut être envisagé.",
-      cards: ["Cabinet privé sur rendez-vous", "Parcours pour sport, travail et quotidien", "Disponibilité pour soins à domicile"]
+      medicalOffice: "Cabinet médical",
+      mapTitle: "Carte Google interactive",
+      openMap: "Ouvrir dans Google Maps",
+      directions: "Itinéraire"
     },
     appointment: {
+      message: "Bonjour Jamal, je souhaiterais prendre rendez-vous chez MOVERE. Pourriez-vous m’indiquer vos disponibilités ? Merci !",
       eyebrow: "Rendez-vous",
       title: "Dites-nous ce que vous souhaitez améliorer et réservez une évaluation.",
       text:
