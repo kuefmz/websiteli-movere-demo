@@ -305,8 +305,7 @@ export const siteContent = {
     },
     cta: {
       appointment: "Prenota ora",
-      treatments: "Vedi trattamenti",
-      phone: "Chiama"
+      treatments: "Vedi trattamenti"
     },
     hero: {
       eyebrow: "MOVERE",
@@ -403,8 +402,7 @@ export const siteContent = {
     },
     cta: {
       appointment: "Book now",
-      treatments: "View treatments",
-      phone: "Call"
+      treatments: "View treatments"
     },
     hero: {
       eyebrow: "MOVERE",
@@ -501,8 +499,7 @@ export const siteContent = {
     },
     cta: {
       appointment: "Reservar ahora",
-      treatments: "Ver tratamientos",
-      phone: "Llamar"
+      treatments: "Ver tratamientos"
     },
     hero: {
       eyebrow: "MOVERE",
@@ -599,8 +596,7 @@ export const siteContent = {
     },
     cta: {
       appointment: "Réserver",
-      treatments: "Voir les traitements",
-      phone: "Appeler"
+      treatments: "Voir les traitements"
     },
     hero: {
       eyebrow: "MOVERE",

@@ -12,7 +12,8 @@ const content = siteContent[lang];
 const aboutPhoto = "/assets/jamal-alzaidy.jpeg";
 const absoluteUrl = (path: string) => new URL(withBase(path), Astro.site).href;
 const canonical = absoluteUrl(languageMeta[lang].path);
-const appointmentHref = `https://wa.me/${BRAND.contact.whatsappNumber}?text=${encodeURIComponent(content.appointment.message)}`;
+const whatsappHref = `https://wa.me/${BRAND.contact.whatsappNumber}`;
+const appointmentHref = `${whatsappHref}?text=${encodeURIComponent(content.appointment.message)}`;
 // Toggle these if you want to compare the four points inside the hero vs. below it.
 const showHeroTrustPanel = false;
 const showTrustStrip = true;
@@ -104,7 +105,7 @@ const jsonLd = {
               ))}
             </div>
           </details>
-          <a class="phone-pill" href={BRAND.contact.phoneHref} aria-label={`${content.cta.phone} ${BRAND.contact.phoneDisplay}`}>
+          <a class="phone-pill" href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${BRAND.contact.phoneDisplay}`}>
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.7 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.2 21.5 2.5 13.8 2.5 4.3 2.5 3.6 3.1 3 3.8 3h3.5c.7 0 1.3.6 1.3 1.3 0 1.1.2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.2 2.2Z"/></svg>
             {BRAND.contact.phoneDisplay}
           </a>
@@ -309,7 +310,7 @@ const jsonLd = {
             <h2 id="appointment-title">{content.appointment.title}</h2>
             <p>{content.appointment.text}</p>
             <div class="appointment-actions">
-              <a class="button button-light" href={appointmentHref} target="_blank" rel="noopener noreferrer">WhatsApp {BRAND.contact.phoneDisplay}</a>
+              <a class="button button-light" href={whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp {BRAND.contact.phoneDisplay}</a>
               <a class="button button-ghost-light" href={`mailto:${BRAND.contact.email}`}>{BRAND.contact.email}</a>
             </div>
           </div>
@@ -328,7 +329,7 @@ const jsonLd = {
         </div>
         <div>
           <h2>{content.footer.contact}</h2>
-          <a href={BRAND.contact.phoneHref}>{BRAND.contact.phoneDisplay}</a>
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${BRAND.contact.phoneDisplay}`}>{BRAND.contact.phoneDisplay}</a>
           <a href={`mailto:${BRAND.contact.email}`}>{BRAND.contact.email}</a>
         </div>
         <div>

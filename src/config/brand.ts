@@ -1,4 +1,4 @@
-const phoneNumber = "+393534319661";
+const phoneDisplay = "+39 353 431 9661";
 
 export const BRAND = {
   name: "MOVERE",
@@ -14,9 +14,8 @@ export const BRAND = {
   favicon: "/assets/movere-logo.png",
   heroImage: "/assets/movere-hero.png",
   contact: {
-    phoneDisplay: "+39 353 431 9661",
-    phoneHref: `tel:${phoneNumber}`,
-    whatsappNumber: phoneNumber.slice(1),
+    phoneDisplay,
+    whatsappNumber: phoneDisplay.replace(/\D/g, ""),
     email: "info@movereclinic.com",
     city: "Italia",
     country: "IT"
